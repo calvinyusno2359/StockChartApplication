@@ -93,7 +93,11 @@ class Main(qtw.QWidget, Ui_Form):
 		ax = self.figure.add_subplot(111)
 		# matplotlib has its own internal representation of datetime
 		# date2num converts datetime.datetime to this internal representation
-		x_data = list(mdates.date2num(self.selected_stock_data.index.values))
+
+		x_data = list(mdates.date2num(
+		                              [datetime.strptime(dates, self.date_format).date()
+		                              for dates in self.selected_stock_data.index.values]
+		                              ))
 		y_data = list(self.selected_stock_data[column_head])
 		ax.plot(x_data, y_data)
 

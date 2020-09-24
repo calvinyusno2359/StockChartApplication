@@ -181,15 +181,16 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QGraphicsView" name="graphicsView">
+  <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>400</y>
+     <y>390</y>
      <width>1101</width>
-     <height>451</height>
+     <height>461</height>
     </rect>
    </property>
+   <layout class="QVBoxLayout" name="canvasLayout"/>
   </widget>
  </widget>
  <resources/>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'main_window.ui'
+# Form implementation generated from reading ui file '.\src\main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.9.2
 #
@@ -69,9 +69,12 @@ class Ui_Form(object):
         self.endDateLabel.setFont(font)
         self.endDateLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.endDateLabel.setObjectName("endDateLabel")
-        self.graphicsView = QtWidgets.QGraphicsView(Form)
-        self.graphicsView.setGeometry(QtCore.QRect(10, 400, 1101, 451))
-        self.graphicsView.setObjectName("graphicsView")
+        self.verticalLayoutWidget = QtWidgets.QWidget(Form)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 390, 1101, 461))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.canvasLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.canvasLayout.setContentsMargins(0, 0, 0, 0)
+        self.canvasLayout.setObjectName("canvasLayout")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)

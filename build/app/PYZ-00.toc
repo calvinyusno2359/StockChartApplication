@@ -656,13 +656,9 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\__init__.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging',
+  ('pkg_resources._vendor.packaging.version',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.markers',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
    'PYMODULE'),
   ('typing',
    'c:\\users\\calvin '
@@ -672,13 +668,37 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.appdirs',
+  ('pkg_resources._vendor.packaging._typing',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_typing.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.six',
+  ('pkg_resources._vendor.pyparsing',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\pyparsing.py',
+   'PYMODULE'),
+  ('uuid',
+   'c:\\users\\calvin '
+   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\uuid.py',
+   'PYMODULE'),
+  ('ctypes.util',
+   'c:\\users\\calvin '
+   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\ctypes\\util.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dyld',
+   'c:\\users\\calvin '
+   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\ctypes\\macholib\\dyld.py',
+   'PYMODULE'),
+  ('ctypes.macholib',
+   'c:\\users\\calvin '
+   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\ctypes\\macholib\\__init__.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dylib',
+   'c:\\users\\calvin '
+   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\ctypes\\macholib\\dylib.py',
+   'PYMODULE'),
+  ('ctypes.macholib.framework',
+   'c:\\users\\calvin '
+   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\ctypes\\macholib\\framework.py',
    'PYMODULE'),
   ('pkg_resources._vendor.packaging.tags',
    'c:\\users\\calvin '
@@ -812,65 +832,45 @@
    'c:\\users\\calvin '
    'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\distutils\\errors.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging.utils',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.requirements',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
-   'PYMODULE'),
   ('pkg_resources._vendor.packaging.specifiers',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging._typing',
+  ('pkg_resources._vendor.packaging.markers',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_typing.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
    'PYMODULE'),
   ('pkg_resources._vendor',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.pyparsing',
+  ('pkg_resources._vendor.packaging._compat',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\pyparsing.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
    'PYMODULE'),
-  ('uuid',
+  ('pkg_resources._vendor.packaging.utils',
    'c:\\users\\calvin '
-   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\uuid.py',
-   'PYMODULE'),
-  ('ctypes.util',
-   'c:\\users\\calvin '
-   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\ctypes\\util.py',
-   'PYMODULE'),
-  ('ctypes.macholib.dyld',
-   'c:\\users\\calvin '
-   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\ctypes\\macholib\\dyld.py',
-   'PYMODULE'),
-  ('ctypes.macholib',
-   'c:\\users\\calvin '
-   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\ctypes\\macholib\\__init__.py',
-   'PYMODULE'),
-  ('ctypes.macholib.dylib',
-   'c:\\users\\calvin '
-   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\ctypes\\macholib\\dylib.py',
-   'PYMODULE'),
-  ('ctypes.macholib.framework',
-   'c:\\users\\calvin '
-   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\ctypes\\macholib\\framework.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.version',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
    'PYMODULE'),
   ('pkg_resources._vendor.packaging._structures',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_structures.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging._compat',
+  ('pkg_resources._vendor.appdirs',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.requirements',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.six',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
    'PYMODULE'),
   ('sysconfig',
    'c:\\users\\calvin '
@@ -1100,49 +1100,33 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\__init__.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging._structures',
+  ('setuptools._vendor.packaging.tags',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_structures.py',
-   'PYMODULE'),
-  ('setuptools._vendor.ordered_set',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\ordered_set.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\tags.py',
    'PYMODULE'),
   ('setuptools._vendor.packaging.version',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\version.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging.requirements',
+  ('setuptools._vendor.packaging',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\requirements.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.tags',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\tags.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.specifiers',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.__about__',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__about__.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
    'PYMODULE'),
   ('setuptools._vendor.packaging._compat',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging.utils',
+  ('setuptools._vendor.ordered_set',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\utils.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\ordered_set.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging._typing',
+  ('setuptools._vendor.packaging.requirements',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_typing.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\requirements.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.specifiers',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
    'PYMODULE'),
   ('setuptools._vendor.six',
    'c:\\users\\calvin '
@@ -1159,6 +1143,22 @@
   ('setuptools._vendor.packaging.markers',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\markers.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging._typing',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_typing.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging._structures',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.__about__',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__about__.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.utils',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\setuptools\\_vendor\\packaging\\utils.py',
    'PYMODULE'),
   ('setuptools.msvc',
    'c:\\users\\calvin '
@@ -2008,73 +2008,133 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\_testing.py',
    'PYMODULE'),
-  ('matplotlib.pyplot',
+  ('pandas._config.localization',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\pyplot.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\_config\\localization.py',
    'PYMODULE'),
-  ('matplotlib.patheffects',
+  ('pandas.core.util.hashing',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\patheffects.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\util\\hashing.py',
    'PYMODULE'),
-  ('matplotlib.transforms',
+  ('pandas.core.util',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\transforms.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\util\\__init__.py',
    'PYMODULE'),
-  ('matplotlib.path',
+  ('pandas.core.internals.concat',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\path.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\internals\\concat.py',
    'PYMODULE'),
-  ('matplotlib.hatch',
+  ('pandas.core.internals.blocks',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\hatch.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\internals\\blocks.py',
    'PYMODULE'),
-  ('matplotlib.bezier',
+  ('pandas.core.array_algos.transforms',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\bezier.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\array_algos\\transforms.py',
    'PYMODULE'),
-  ('matplotlib.backends',
+  ('pandas.core.array_algos',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\__init__.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\array_algos\\__init__.py',
    'PYMODULE'),
-  ('matplotlib.backends.backend_template',
+  ('pandas.core.array_algos.masked_reductions',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_template.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\array_algos\\masked_reductions.py',
    'PYMODULE'),
-  ('matplotlib.backends.backend_svg',
+  ('pandas.core.frame',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_svg.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\frame.py',
    'PYMODULE'),
-  ('matplotlib.mathtext',
+  ('pandas.core.apply',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\mathtext.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\apply.py',
    'PYMODULE'),
-  ('matplotlib._mathtext_data',
+  ('pandas.core.reshape.reshape',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_mathtext_data.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\reshape\\reshape.py',
    'PYMODULE'),
-  ('matplotlib.afm',
+  ('pandas.core.reshape.pivot',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\afm.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\reshape\\pivot.py',
    'PYMODULE'),
-  ('pyparsing',
+  ('pandas.core.computation.eval',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pyparsing.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\eval.py',
    'PYMODULE'),
-  ('matplotlib.font_manager',
+  ('pandas.core.computation.scope',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\font_manager.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\scope.py',
    'PYMODULE'),
-  ('matplotlib.fontconfig_pattern',
+  ('pandas.core.computation.ops',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\fontconfig_pattern.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\ops.py',
    'PYMODULE'),
-  ('matplotlib.dates',
+  ('pandas.core.computation.common',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\dates.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\common.py',
    'PYMODULE'),
-  ('matplotlib.units',
+  ('pandas.compat.chainmap',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\units.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\compat\\chainmap.py',
+   'PYMODULE'),
+  ('pandas.core.computation.parsing',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\parsing.py',
+   'PYMODULE'),
+  ('pandas.core.computation.expr',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\expr.py',
+   'PYMODULE'),
+  ('pandas.core.computation.engines',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\engines.py',
+   'PYMODULE'),
+  ('pandas.core.computation.align',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\align.py',
+   'PYMODULE'),
+  ('pandas.io.parquet',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\parquet.py',
+   'PYMODULE'),
+  ('pandas.core.arrays._arrow_utils',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\arrays\\_arrow_utils.py',
+   'PYMODULE'),
+  ('pandas.io.feather_format',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\feather_format.py',
+   'PYMODULE'),
+  ('pandas.io.stata',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\stata.py',
+   'PYMODULE'),
+  ('dateutil.relativedelta',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\relativedelta.py',
+   'PYMODULE'),
+  ('dateutil',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\__init__.py',
+   'PYMODULE'),
+  ('dateutil.rrule',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\rrule.py',
+   'PYMODULE'),
+  ('dateutil.parser',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\parser\\__init__.py',
+   'PYMODULE'),
+  ('dateutil.parser.isoparser',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\parser\\isoparser.py',
+   'PYMODULE'),
+  ('dateutil.parser._parser',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\parser\\_parser.py',
+   'PYMODULE'),
+  ('fractions',
+   'c:\\users\\calvin '
+   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\fractions.py',
    'PYMODULE'),
   ('dateutil.tz',
    'c:\\users\\calvin '
@@ -2088,10 +2148,6 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\zoneinfo\\__init__.py',
    'PYMODULE'),
-  ('dateutil.parser._parser',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\parser\\_parser.py',
-   'PYMODULE'),
   ('dateutil.tz.win',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\tz\\win.py',
@@ -2104,14 +2160,6 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\tz\\_common.py',
    'PYMODULE'),
-  ('six',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\six.py',
-   'PYMODULE'),
-  ('dateutil',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\__init__.py',
-   'PYMODULE'),
   ('dateutil.easter',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\easter.py',
@@ -2120,77 +2168,221 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\_version.py',
    'PYMODULE'),
-  ('dateutil.parser',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\parser\\__init__.py',
-   'PYMODULE'),
-  ('dateutil.parser.isoparser',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\parser\\isoparser.py',
-   'PYMODULE'),
-  ('dateutil.relativedelta',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\relativedelta.py',
-   'PYMODULE'),
   ('dateutil._common',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\_common.py',
    'PYMODULE'),
-  ('dateutil.rrule',
+  ('six',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\dateutil\\rrule.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\six.py',
    'PYMODULE'),
-  ('fractions',
+  ('pandas.io.gbq',
    'c:\\users\\calvin '
-   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\fractions.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\gbq.py',
    'PYMODULE'),
-  ('matplotlib.backends.backend_mixed',
+  ('pandas.io',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_mixed.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\__init__.py',
    'PYMODULE'),
-  ('matplotlib.tight_bbox',
+  ('pandas.io.clipboards',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tight_bbox.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\clipboards.py',
+   'PYMODULE'),
+  ('pandas.io.parsers',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\parsers.py',
+   'PYMODULE'),
+  ('pandas.io.date_converters',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\date_converters.py',
+   'PYMODULE'),
+  ('pandas.core.tools.datetimes',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\tools\\datetimes.py',
+   'PYMODULE'),
+  ('pandas.core.tools.times',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\tools\\times.py',
+   'PYMODULE'),
+  ('pandas.core.tools',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\tools\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io.clipboard',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\clipboard\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io.sql',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\sql.py',
+   'PYMODULE'),
+  ('sqlite3',
+   'c:\\users\\calvin '
+   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\sqlite3\\__init__.py',
+   'PYMODULE'),
+  ('sqlite3.dump',
+   'c:\\users\\calvin '
+   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\sqlite3\\dump.py',
+   'PYMODULE'),
+  ('sqlite3.dbapi2',
+   'c:\\users\\calvin '
+   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\sqlite3\\dbapi2.py',
+   'PYMODULE'),
+  ('pandas.io.pytables',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\pytables.py',
+   'PYMODULE'),
+  ('pandas.core.computation.pytables',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\pytables.py',
+   'PYMODULE'),
+  ('pandas.compat.pickle_compat',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\compat\\pickle_compat.py',
+   'PYMODULE'),
+  ('pandas.io.formats.style',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\formats\\style.py',
+   'PYMODULE'),
+  ('pandas.io.formats.excel',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\formats\\excel.py',
+   'PYMODULE'),
+  ('pandas.io.excel',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\__init__.py',
+   'PYMODULE'),
+  ('pandas.io.excel._xlwt',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_xlwt.py',
+   'PYMODULE'),
+  ('pandas.io.excel._xlsxwriter',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_xlsxwriter.py',
+   'PYMODULE'),
+  ('pandas.io.excel._util',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_util.py',
+   'PYMODULE'),
+  ('pandas.io.excel._openpyxl',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_openpyxl.py',
+   'PYMODULE'),
+  ('pandas.io.excel._odswriter',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_odswriter.py',
+   'PYMODULE'),
+  ('pandas.io.excel._base',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_base.py',
+   'PYMODULE'),
+  ('pandas.io.excel._xlrd',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_xlrd.py',
+   'PYMODULE'),
+  ('pandas.io.excel._pyxlsb',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_pyxlsb.py',
+   'PYMODULE'),
+  ('pandas.io.excel._odfreader',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_odfreader.py',
+   'PYMODULE'),
+  ('pandas.io.formats.css',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\formats\\css.py',
+   'PYMODULE'),
+  ('matplotlib.colors',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\colors.py',
+   'PYMODULE'),
+  ('matplotlib._color_data',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_color_data.py',
+   'PYMODULE'),
+  ('matplotlib.docstring',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\docstring.py',
+   'PYMODULE'),
+  ('matplotlib.cbook',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\cbook\\__init__.py',
+   'PYMODULE'),
+  ('matplotlib.artist',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\artist.py',
+   'PYMODULE'),
+  ('matplotlib.patches',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\patches.py',
+   'PYMODULE'),
+  ('matplotlib.patheffects',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\patheffects.py',
+   'PYMODULE'),
+  ('matplotlib.backend_bases',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backend_bases.py',
+   'PYMODULE'),
+  ('matplotlib.figure',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\figure.py',
+   'PYMODULE'),
+  ('matplotlib.tight_layout',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tight_layout.py',
+   'PYMODULE'),
+  ('matplotlib.font_manager',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\font_manager.py',
+   'PYMODULE'),
+  ('matplotlib.fontconfig_pattern',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\fontconfig_pattern.py',
+   'PYMODULE'),
+  ('pyparsing',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pyparsing.py',
+   'PYMODULE'),
+  ('matplotlib.afm',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\afm.py',
+   'PYMODULE'),
+  ('matplotlib._mathtext_data',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_mathtext_data.py',
+   'PYMODULE'),
+  ('matplotlib._constrained_layout',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_constrained_layout.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_webagg',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_webagg.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_webagg_core',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_webagg_core.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_agg',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_agg.py',
+   'PYMODULE'),
+  ('matplotlib.mathtext',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\mathtext.py',
    'PYMODULE'),
   ('PIL.Image',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\Image.py',
    'PYMODULE'),
-  ('PIL.PsdImagePlugin',
+  ('PIL.FitsStubImagePlugin',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\PsdImagePlugin.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\FitsStubImagePlugin.py',
    'PYMODULE'),
   ('PIL.ImageFile',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\ImageFile.py',
-   'PYMODULE'),
-  ('PIL.MpegImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\MpegImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.ImImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\ImImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.DcxImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\DcxImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.FliImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\FliImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.SunImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\SunImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.XVThumbImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.EpsImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\EpsImagePlugin.py',
    'PYMODULE'),
   ('PIL.PdfImagePlugin',
    'c:\\users\\calvin '
@@ -2204,105 +2396,21 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\ImageSequence.py',
    'PYMODULE'),
-  ('PIL.ImtImagePlugin',
+  ('PIL.PcdImagePlugin',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\ImtImagePlugin.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\PcdImagePlugin.py',
    'PYMODULE'),
-  ('PIL.Hdf5StubImagePlugin',
+  ('PIL.GbrImagePlugin',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\Hdf5StubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.DdsImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\DdsImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.XbmImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\XbmImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.FitsStubImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\FitsStubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.IcnsImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\IcnsImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.features',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\features.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\GbrImagePlugin.py',
    'PYMODULE'),
   ('PIL.WebPImagePlugin',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\WebPImagePlugin.py',
    'PYMODULE'),
-  ('PIL.SpiderImagePlugin',
+  ('PIL.XVThumbImagePlugin',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\SpiderImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.ImageTk',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\ImageTk.py',
-   'PYMODULE'),
-  ('PIL.MpoImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\MpoImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.TgaImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\TgaImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MicImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\MicImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.XpmImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\XpmImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.BufrStubImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\BufrStubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PixarImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\PixarImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.FtexImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\FtexImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.Jpeg2KImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.IcoImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\IcoImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.PcxImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\PcxImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.MspImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\MspImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.SgiImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\SgiImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.GribStubImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\GribStubImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.FpxImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\FpxImagePlugin.py',
-   'PYMODULE'),
-  ('PIL.GbrImagePlugin',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\GbrImagePlugin.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
    'PYMODULE'),
   ('PIL.PalmImagePlugin',
    'c:\\users\\calvin '
@@ -2312,25 +2420,137 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\McIdasImagePlugin.py',
    'PYMODULE'),
-  ('PIL.PcdImagePlugin',
+  ('PIL.PixarImagePlugin',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\PcdImagePlugin.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\PixarImagePlugin.py',
    'PYMODULE'),
-  ('PIL.IptcImagePlugin',
+  ('PIL.MpoImagePlugin',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\IptcImagePlugin.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\MpoImagePlugin.py',
    'PYMODULE'),
-  ('PIL.WmfImagePlugin',
+  ('PIL.EpsImagePlugin',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\WmfImagePlugin.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\EpsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.ImtImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\ImtImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.BlpImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\BlpImagePlugin.py',
    'PYMODULE'),
   ('PIL.CurImagePlugin',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\CurImagePlugin.py',
    'PYMODULE'),
-  ('PIL.BlpImagePlugin',
+  ('PIL.WmfImagePlugin',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\BlpImagePlugin.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\WmfImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.DdsImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\DdsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MspImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\MspImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PcxImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\PcxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MpegImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\MpegImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.ImImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\ImImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FliImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\FliImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FtexImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\FtexImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XpmImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\XpmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SunImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\SunImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PsdImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\PsdImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Jpeg2KImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.IptcImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\IptcImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SgiImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\SgiImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.TgaImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\TgaImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Hdf5StubImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\Hdf5StubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SpiderImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\SpiderImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.ImageTk',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\ImageTk.py',
+   'PYMODULE'),
+  ('PIL.DcxImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\DcxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.GribStubImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\GribStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FpxImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\FpxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MicImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\MicImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.BufrStubImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\BufrStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XbmImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\XbmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.IcnsImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\IcnsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.features',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\features.py',
+   'PYMODULE'),
+  ('PIL.IcoImagePlugin',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\IcoImagePlugin.py',
    'PYMODULE'),
   ('PIL.TiffImagePlugin',
    'c:\\users\\calvin '
@@ -2448,17 +2668,25 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PIL\\_version.py',
    'PYMODULE'),
+  ('matplotlib.backends',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\__init__.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_template',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_template.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_svg',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_svg.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_mixed',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_mixed.py',
+   'PYMODULE'),
   ('matplotlib.backends.backend_ps',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_ps.py',
-   'PYMODULE'),
-  ('matplotlib.texmanager',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\texmanager.py',
-   'PYMODULE'),
-  ('matplotlib.dviread',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\dviread.py',
    'PYMODULE'),
   ('matplotlib._text_layout',
    'c:\\users\\calvin '
@@ -2471,6 +2699,10 @@
   ('matplotlib.backends.backend_pdf',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_pdf.py',
+   'PYMODULE'),
+  ('matplotlib.dviread',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\dviread.py',
    'PYMODULE'),
   ('matplotlib.type1font',
    'c:\\users\\calvin '
@@ -2487,10 +2719,6 @@
   ('matplotlib.backends._backend_tk',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\_backend_tk.py',
-   'PYMODULE'),
-  ('matplotlib.backend_tools',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backend_tools.py',
    'PYMODULE'),
   ('tkinter.messagebox',
    'c:\\users\\calvin '
@@ -2520,65 +2748,13 @@
    'c:\\users\\calvin '
    'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\tkinter\\constants.py',
    'PYMODULE'),
-  ('matplotlib.backends.backend_qt5agg',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_qt5agg.py',
-   'PYMODULE'),
-  ('matplotlib.backends.qt_compat',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\qt_compat.py',
-   'PYMODULE'),
-  ('matplotlib.backends.backend_qt5',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_qt5.py',
-   'PYMODULE'),
-  ('matplotlib.backends.qt_editor._formsubplottool',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\_formsubplottool.py',
-   'PYMODULE'),
-  ('matplotlib.backends.qt_editor',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\__init__.py',
-   'PYMODULE'),
-  ('matplotlib.backends.qt_editor._formlayout',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\_formlayout.py',
-   'PYMODULE'),
-  ('matplotlib.backends.qt_editor.figureoptions',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\figureoptions.py',
-   'PYMODULE'),
-  ('matplotlib.markers',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\markers.py',
-   'PYMODULE'),
   ('matplotlib.backends.backend_qt4agg',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_qt4agg.py',
    'PYMODULE'),
-  ('matplotlib.backends.backend_agg',
+  ('matplotlib._layoutbox',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_agg.py',
-   'PYMODULE'),
-  ('matplotlib.backends.backend_webagg',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_webagg.py',
-   'PYMODULE'),
-  ('matplotlib.backends.backend_webagg_core',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_webagg_core.py',
-   'PYMODULE'),
-  ('matplotlib.ticker',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\ticker.py',
-   'PYMODULE'),
-  ('matplotlib.widgets',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\widgets.py',
-   'PYMODULE'),
-  ('matplotlib.patches',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\patches.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_layoutbox.py',
    'PYMODULE'),
   ('matplotlib.text',
    'c:\\users\\calvin '
@@ -2588,58 +2764,73 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\offsetbox.py',
    'PYMODULE'),
-  ('matplotlib.textpath',
+  ('matplotlib.legend',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\textpath.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\legend.py',
    'PYMODULE'),
-  ('matplotlib.lines',
+  ('matplotlib.legend_handler',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\lines.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\legend_handler.py',
    'PYMODULE'),
-  ('matplotlib.colors',
+  ('matplotlib.container',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\colors.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\container.py',
    'PYMODULE'),
-  ('matplotlib._color_data',
+  ('matplotlib.gridspec',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_color_data.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\gridspec.py',
    'PYMODULE'),
-  ('matplotlib.cm',
+  ('matplotlib.blocking_input',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\cm.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\blocking_input.py',
    'PYMODULE'),
-  ('matplotlib._cm_listed',
+  ('matplotlib.axes',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_cm_listed.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axes\\__init__.py',
    'PYMODULE'),
-  ('matplotlib._cm',
+  ('matplotlib.axes._axes',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_cm.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axes\\_axes.py',
+   'PYMODULE'),
+  ('matplotlib.axes._secondary_axes',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axes\\_secondary_axes.py',
+   'PYMODULE'),
+  ('matplotlib.axes._base',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axes\\_base.py',
+   'PYMODULE'),
+  ('matplotlib.rcsetup',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\rcsetup.py',
+   'PYMODULE'),
+  ('cycler',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\cycler.py',
+   'PYMODULE'),
+  ('matplotlib.animation',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\animation.py',
+   'PYMODULE'),
+  ('matplotlib._animation_data',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_animation_data.py',
+   'PYMODULE'),
+  ('matplotlib.spines',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\spines.py',
+   'PYMODULE'),
+  ('matplotlib.axis',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axis.py',
+   'PYMODULE'),
+  ('matplotlib.units',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\units.py',
    'PYMODULE'),
   ('matplotlib.scale',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\scale.py',
-   'PYMODULE'),
-  ('matplotlib.mlab',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\mlab.py',
-   'PYMODULE'),
-  ('matplotlib.projections',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\projections\\__init__.py',
-   'PYMODULE'),
-  ('mpl_toolkits.mplot3d',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\mpl_toolkits\\mplot3d\\__init__.py',
-   'PYMODULE'),
-  ('mpl_toolkits', '-', 'PYMODULE'),
-  ('mpl_toolkits.mplot3d.axes3d',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\mpl_toolkits\\mplot3d\\axes3d.py',
-   'PYMODULE'),
-  ('matplotlib.tri.triangulation',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tri\\triangulation.py',
    'PYMODULE'),
   ('matplotlib.tri',
    'c:\\users\\calvin '
@@ -2661,6 +2852,10 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tri\\triinterpolate.py',
    'PYMODULE'),
+  ('matplotlib.tri.trifinder',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tri\\trifinder.py',
+   'PYMODULE'),
   ('matplotlib.tri.tritools',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tri\\tritools.py',
@@ -2669,33 +2864,82 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tri\\tricontour.py',
    'PYMODULE'),
+  ('matplotlib.tri.triangulation',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tri\\triangulation.py',
+   'PYMODULE'),
+  ('matplotlib.ticker',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\ticker.py',
+   'PYMODULE'),
+  ('matplotlib.table',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\table.py',
+   'PYMODULE'),
+  ('matplotlib.streamplot',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\streamplot.py',
+   'PYMODULE'),
+  ('matplotlib.cm',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\cm.py',
+   'PYMODULE'),
+  ('matplotlib._cm_listed',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_cm_listed.py',
+   'PYMODULE'),
+  ('matplotlib._cm',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_cm.py',
+   'PYMODULE'),
+  ('matplotlib.stackplot',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\stackplot.py',
+   'PYMODULE'),
+  ('matplotlib.quiver',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\quiver.py',
+   'PYMODULE'),
+  ('matplotlib.mlab',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\mlab.py',
+   'PYMODULE'),
+  ('matplotlib.markers',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\markers.py',
+   'PYMODULE'),
   ('matplotlib.contour',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\contour.py',
    'PYMODULE'),
-  ('matplotlib.blocking_input',
+  ('matplotlib.category',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\blocking_input.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\category.py',
    'PYMODULE'),
-  ('matplotlib.tri.trifinder',
+  ('matplotlib.axes._subplots',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tri\\trifinder.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axes\\_subplots.py',
    'PYMODULE'),
-  ('matplotlib.axes._base',
+  ('matplotlib.image',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axes\\_base.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\image.py',
    'PYMODULE'),
-  ('matplotlib.spines',
+  ('matplotlib.colorbar',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\spines.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\colorbar.py',
    'PYMODULE'),
-  ('matplotlib.axis',
+  ('matplotlib.projections',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axis.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\projections\\__init__.py',
    'PYMODULE'),
-  ('matplotlib.collections',
+  ('mpl_toolkits.mplot3d',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\collections.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\mpl_toolkits\\mplot3d\\__init__.py',
+   'PYMODULE'),
+  ('mpl_toolkits', '-', 'PYMODULE'),
+  ('mpl_toolkits.mplot3d.axes3d',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\mpl_toolkits\\mplot3d\\axes3d.py',
    'PYMODULE'),
   ('mpl_toolkits.mplot3d.axis3d',
    'c:\\users\\calvin '
@@ -2717,129 +2961,61 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\projections\\geo.py',
    'PYMODULE'),
-  ('matplotlib.axes',
+  ('matplotlib.texmanager',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axes\\__init__.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\texmanager.py',
    'PYMODULE'),
-  ('matplotlib.axes._axes',
+  ('matplotlib.collections',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axes\\_axes.py',
-   'PYMODULE'),
-  ('matplotlib.container',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\container.py',
-   'PYMODULE'),
-  ('matplotlib.axes._secondary_axes',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axes\\_secondary_axes.py',
-   'PYMODULE'),
-  ('matplotlib.table',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\table.py',
-   'PYMODULE'),
-  ('matplotlib.streamplot',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\streamplot.py',
-   'PYMODULE'),
-  ('matplotlib.stackplot',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\stackplot.py',
-   'PYMODULE'),
-  ('matplotlib.quiver',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\quiver.py',
-   'PYMODULE'),
-  ('matplotlib.legend',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\legend.py',
-   'PYMODULE'),
-  ('matplotlib.legend_handler',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\legend_handler.py',
-   'PYMODULE'),
-  ('matplotlib.category',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\category.py',
-   'PYMODULE'),
-  ('matplotlib.axes._subplots',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\axes\\_subplots.py',
-   'PYMODULE'),
-  ('matplotlib._layoutbox',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_layoutbox.py',
-   'PYMODULE'),
-  ('matplotlib.artist',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\artist.py',
-   'PYMODULE'),
-  ('matplotlib.gridspec',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\gridspec.py',
-   'PYMODULE'),
-  ('matplotlib.tight_layout',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tight_layout.py',
-   'PYMODULE'),
-  ('matplotlib.figure',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\figure.py',
-   'PYMODULE'),
-  ('matplotlib._constrained_layout',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_constrained_layout.py',
-   'PYMODULE'),
-  ('matplotlib.backend_bases',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backend_bases.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\collections.py',
    'PYMODULE'),
   ('matplotlib.backend_managers',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backend_managers.py',
    'PYMODULE'),
-  ('matplotlib.docstring',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\docstring.py',
-   'PYMODULE'),
-  ('matplotlib.cbook',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\cbook\\__init__.py',
-   'PYMODULE'),
-  ('matplotlib.cbook.deprecation',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\cbook\\deprecation.py',
-   'PYMODULE'),
   ('matplotlib._pylab_helpers',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_pylab_helpers.py',
    'PYMODULE'),
-  ('matplotlib.style',
+  ('matplotlib.widgets',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\style\\__init__.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\widgets.py',
    'PYMODULE'),
-  ('matplotlib.style.core',
+  ('matplotlib.tight_bbox',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\style\\core.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\tight_bbox.py',
    'PYMODULE'),
-  ('matplotlib.rcsetup',
+  ('matplotlib.textpath',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\rcsetup.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\textpath.py',
    'PYMODULE'),
-  ('matplotlib.animation',
+  ('matplotlib.backend_tools',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\animation.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backend_tools.py',
    'PYMODULE'),
-  ('matplotlib._animation_data',
+  ('matplotlib.bezier',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_animation_data.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\bezier.py',
    'PYMODULE'),
-  ('matplotlib.image',
+  ('matplotlib.lines',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\image.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\lines.py',
    'PYMODULE'),
-  ('matplotlib.colorbar',
+  ('matplotlib.transforms',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\colorbar.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\transforms.py',
+   'PYMODULE'),
+  ('matplotlib.path',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\path.py',
+   'PYMODULE'),
+  ('matplotlib.hatch',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\hatch.py',
+   'PYMODULE'),
+  ('matplotlib.cbook.deprecation',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\cbook\\deprecation.py',
    'PYMODULE'),
   ('matplotlib',
    'c:\\users\\calvin '
@@ -2848,6 +3024,10 @@
   ('matplotlib.pylab',
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\pylab.py',
+   'PYMODULE'),
+  ('matplotlib.style.core',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\style\\core.py',
    'PYMODULE'),
   ('certifi',
    'c:\\users\\calvin '
@@ -2861,225 +3041,9 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\_version.py',
    'PYMODULE'),
-  ('cycler',
+  ('matplotlib.style',
    'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\cycler.py',
-   'PYMODULE'),
-  ('pandas._config.localization',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\_config\\localization.py',
-   'PYMODULE'),
-  ('pandas.core.util.hashing',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\util\\hashing.py',
-   'PYMODULE'),
-  ('pandas.core.util',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\util\\__init__.py',
-   'PYMODULE'),
-  ('pandas.core.internals.concat',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\internals\\concat.py',
-   'PYMODULE'),
-  ('pandas.core.internals.blocks',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\internals\\blocks.py',
-   'PYMODULE'),
-  ('pandas.core.array_algos.transforms',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\array_algos\\transforms.py',
-   'PYMODULE'),
-  ('pandas.core.array_algos',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\array_algos\\__init__.py',
-   'PYMODULE'),
-  ('pandas.core.array_algos.masked_reductions',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\array_algos\\masked_reductions.py',
-   'PYMODULE'),
-  ('pandas.core.frame',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\frame.py',
-   'PYMODULE'),
-  ('pandas.core.apply',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\apply.py',
-   'PYMODULE'),
-  ('pandas.core.reshape.reshape',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\reshape\\reshape.py',
-   'PYMODULE'),
-  ('pandas.core.reshape.pivot',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\reshape\\pivot.py',
-   'PYMODULE'),
-  ('pandas.core.computation.eval',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\eval.py',
-   'PYMODULE'),
-  ('pandas.core.computation.scope',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\scope.py',
-   'PYMODULE'),
-  ('pandas.core.computation.ops',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\ops.py',
-   'PYMODULE'),
-  ('pandas.core.computation.common',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\common.py',
-   'PYMODULE'),
-  ('pandas.compat.chainmap',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\compat\\chainmap.py',
-   'PYMODULE'),
-  ('pandas.core.computation.parsing',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\parsing.py',
-   'PYMODULE'),
-  ('pandas.core.computation.expr',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\expr.py',
-   'PYMODULE'),
-  ('pandas.core.computation.engines',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\engines.py',
-   'PYMODULE'),
-  ('pandas.core.computation.align',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\align.py',
-   'PYMODULE'),
-  ('pandas.io.parquet',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\parquet.py',
-   'PYMODULE'),
-  ('pandas.core.arrays._arrow_utils',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\arrays\\_arrow_utils.py',
-   'PYMODULE'),
-  ('pandas.io.feather_format',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\feather_format.py',
-   'PYMODULE'),
-  ('pandas.io.stata',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\stata.py',
-   'PYMODULE'),
-  ('pandas.io.gbq',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\gbq.py',
-   'PYMODULE'),
-  ('pandas.io',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\__init__.py',
-   'PYMODULE'),
-  ('pandas.io.clipboards',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\clipboards.py',
-   'PYMODULE'),
-  ('pandas.io.parsers',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\parsers.py',
-   'PYMODULE'),
-  ('pandas.io.date_converters',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\date_converters.py',
-   'PYMODULE'),
-  ('pandas.core.tools.datetimes',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\tools\\datetimes.py',
-   'PYMODULE'),
-  ('pandas.core.tools.times',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\tools\\times.py',
-   'PYMODULE'),
-  ('pandas.core.tools',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\tools\\__init__.py',
-   'PYMODULE'),
-  ('pandas.io.clipboard',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\clipboard\\__init__.py',
-   'PYMODULE'),
-  ('pandas.io.sql',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\sql.py',
-   'PYMODULE'),
-  ('sqlite3',
-   'c:\\users\\calvin '
-   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\sqlite3\\__init__.py',
-   'PYMODULE'),
-  ('sqlite3.dump',
-   'c:\\users\\calvin '
-   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\sqlite3\\dump.py',
-   'PYMODULE'),
-  ('sqlite3.dbapi2',
-   'c:\\users\\calvin '
-   'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\sqlite3\\dbapi2.py',
-   'PYMODULE'),
-  ('pandas.io.pytables',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\pytables.py',
-   'PYMODULE'),
-  ('pandas.core.computation.pytables',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\core\\computation\\pytables.py',
-   'PYMODULE'),
-  ('pandas.compat.pickle_compat',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\compat\\pickle_compat.py',
-   'PYMODULE'),
-  ('pandas.io.formats.style',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\formats\\style.py',
-   'PYMODULE'),
-  ('pandas.io.formats.excel',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\formats\\excel.py',
-   'PYMODULE'),
-  ('pandas.io.excel',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\__init__.py',
-   'PYMODULE'),
-  ('pandas.io.excel._xlwt',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_xlwt.py',
-   'PYMODULE'),
-  ('pandas.io.excel._xlsxwriter',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_xlsxwriter.py',
-   'PYMODULE'),
-  ('pandas.io.excel._util',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_util.py',
-   'PYMODULE'),
-  ('pandas.io.excel._openpyxl',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_openpyxl.py',
-   'PYMODULE'),
-  ('pandas.io.excel._odswriter',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_odswriter.py',
-   'PYMODULE'),
-  ('pandas.io.excel._base',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_base.py',
-   'PYMODULE'),
-  ('pandas.io.excel._xlrd',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_xlrd.py',
-   'PYMODULE'),
-  ('pandas.io.excel._pyxlsb',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_pyxlsb.py',
-   'PYMODULE'),
-  ('pandas.io.excel._odfreader',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\excel\\_odfreader.py',
-   'PYMODULE'),
-  ('pandas.io.formats.css',
-   'c:\\users\\calvin '
-   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\pandas\\io\\formats\\css.py',
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\style\\__init__.py',
    'PYMODULE'),
   ('pandas.api.types',
    'c:\\users\\calvin '
@@ -3657,6 +3621,34 @@
    'c:\\users\\calvin '
    'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\PyQt5\\__init__.py',
    'PYMODULE'),
+  ('matplotlib.backends.backend_qt5agg',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_qt5agg.py',
+   'PYMODULE'),
+  ('matplotlib.backends.qt_compat',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\qt_compat.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_qt5',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\backend_qt5.py',
+   'PYMODULE'),
+  ('matplotlib.backends.qt_editor._formsubplottool',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\_formsubplottool.py',
+   'PYMODULE'),
+  ('matplotlib.backends.qt_editor',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\__init__.py',
+   'PYMODULE'),
+  ('matplotlib.backends.qt_editor._formlayout',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\_formlayout.py',
+   'PYMODULE'),
+  ('matplotlib.backends.qt_editor.figureoptions',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\figureoptions.py',
+   'PYMODULE'),
   ('datetime',
    'c:\\users\\calvin '
    'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\datetime.py',
@@ -3664,6 +3656,14 @@
   ('pathlib',
    'c:\\users\\calvin '
    'yusnoveri\\appdata\\local\\programs\\python\\python36\\lib\\pathlib.py',
+   'PYMODULE'),
+  ('matplotlib.dates',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\dates.py',
+   'PYMODULE'),
+  ('matplotlib.pyplot',
+   'c:\\users\\calvin '
+   'yusnoveri\\desktop\\heavensward\\stockchartapplication\\venv\\lib\\site-packages\\matplotlib\\pyplot.py',
    'PYMODULE'),
   ('os',
    'c:\\users\\calvin '

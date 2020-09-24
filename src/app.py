@@ -1,5 +1,6 @@
 import sys, os
 from pathlib import Path
+from datetime import datetime
 
 from PyQt5 import QtCore as qtc
 from PyQt5 import QtWidgets as qtw
@@ -24,20 +25,42 @@ class Main(qtw.QWidget, Ui_Form):
 		- Invalid filepath: prompts user
 		"""
 		filepath = Path(self.filePathEdit.text())
-		if filepath:
-			try:
-				stock_data = StockData(filepath)
-				print(stock_data.data)
-				print(f"data loaded from {filepath}")
-			except:
-				print("filepath provided is invalid.")
+
+		try:
+			self.stock_data = StockData(filepath)
+			print(self.stock_data.data)
+			print(f"data loaded from {filepath}")
+		except:
+			print("filepath provided is invalid.")
 
 	def update_graphics(self):
-		start_date = self.startDateEdit.text()
-		end_date = self.endDateEdit.text()
-		period = f"{start_date} to {end_date}"
+		"""
+		Given inputted date string of format YYYY-MM-DD, creates a date object from it.
+		Then, use it to slice a copy of loaded stock_date to be used to update graphics.
+		Error handling:
+		- Invalid date format: prompts user
+		- Non-existent stock_data: prompts user
+		"""
+		date_format = '%Y-%m-%d'
 
-		print(f"graphics updated from {period}")
+		try:
+			start_date = datetime.strptime(self.startDateEdit.text(), date_format).date()
+			end_date = datetime.strptime(self.endDateEdit.text(), date_format).date()
+			period = f"{start_date} to {end_date}"
+			print(f"Time period specified as: {period}")
+
+			try:
+				self.selected_stock_data = self.stock_data.get_data(start_date, end_date)
+				print(self.selected_stock_data)
+
+				# update graphics here
+
+			except AttributeError:
+				print("Stock data has not been loaded. Please specify filepath of relevant .csv file.")
+
+		except ValueError as e:
+			print("Time period has not been specified or does not match YYYY-MM-DD format")
+
 
 if __name__ == "__main__":
 	app = qtw.QApplication([])

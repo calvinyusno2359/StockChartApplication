@@ -16,13 +16,14 @@ To deactivate venv: `deactivate`
 
 ## Compiling `.ui` into `.py`
 The `.ui` files are created and is editable using Qt Designer which can be downloaded here: https://build-system.fman.io/qt-designer-download
+
 To compile the UI files, use the following command:
 ```
 pyuic5 -x -o <output_file.py> <input_file.ui>
 ```
 
 ## Compiling Application `.exe`
-To compile `.py` application into a executable, use the following command from root folder:
+To compile `.py` application into an executable, use the following command from root folder:
 ```
 pyinstaller .\src\<application.py> -F
 ```

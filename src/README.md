@@ -28,3 +28,6 @@ To compile `.py` application into an executable, use the following command from 
 pyinstaller .\src\<application.py> -F
 ```
 The `.exe` file can be found inside `dist` folder.
+
+## Dev Process
+![Dev Process](../asset/img/dev-process.png)

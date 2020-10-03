@@ -3,6 +3,9 @@ import pandas as pd
 class StockData():
 	def __init__(self, filepath):
 		self.data = self.read_csv(filepath).set_index('Date')
+		# self.check_data
+		# self.calculate_SMA
+		# self.calculate_crossover
 
 	def read_csv(self, filepath):
 		"""
@@ -31,6 +34,12 @@ class StockData():
 		"""
 		self.selected_data = self.data[str(start_date):str(end_date)]
 		return self.selected_data
+
+	def check_data():
+		pass
+
+	def calculate_crossover():
+		pass
 
 if __name__ == "__main__":
 	raw = StockData("../data/C31.SI.csv")

@@ -40,6 +40,7 @@ class Main(qtw.QWidget, Ui_Form):
 	def load_data(self):
 		"""
 		Given inputted filepath (str), loads stock data from csv as object StockData.
+		Also autocompletes all inputs using information provided by the csv.
 		Error handling:
 		- Empty filepath: do nothing
 		- Invalid filepath: prompts user
@@ -49,6 +50,7 @@ class Main(qtw.QWidget, Ui_Form):
 		try:
 			self.stock_data = StockData(filepath)
 
+			# auto-complete feauture
 			start_date, end_date = self.stock_data.get_period()
 			period = f"{start_date} to {end_date}"
 			self.startDateEdit.setText(start_date)
@@ -56,6 +58,8 @@ class Main(qtw.QWidget, Ui_Form):
 			self.periodEdit.setText(period)
 			self.SMA1Edit.setText("15")
 			self.SMA2Edit.setText("50")
+			self.SMA1Checkbox.setChecked()
+			self.SMA2Checkbox.setChecked()
 
 			self.report(f"Data loaded from {filepath}; period auto-selected: {start_date} to {end_date}.")
 			print(self.stock_data.data)
@@ -149,8 +153,20 @@ class Main(qtw.QWidget, Ui_Form):
 		self.scrollArea.ensureWidgetVisible(self.scrollLayout.itemAt(latest_index).widget())
 		print(string)
 
+	def center(self):
+		"""
+		Centers the fixed main window size according to user screen size
+		"""
+		screen = qtw.QDesktopWidget().screenGeometry()
+		main_window = self.geometry()
+		x = (screen.width() - main_window.width()) / 2
+		y = (screen.height() - main_window.height()) / 2 - 50	# pulls the window up slightly (arbitrary)
+		self.setFixedSize(main_window.width(), main_window.height())
+		self.move(x, y)
+
 if __name__ == "__main__":
 	app = qtw.QApplication([])
 	main = Main()
+	main.center()
 	main.show()
 	sys.exit(app.exec_())

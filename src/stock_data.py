@@ -50,7 +50,7 @@ class StockData():
 		return (first, last)
 
 if __name__ == "__main__":
-	raw = StockData("../data/C31.SI.csv")
-	selected = raw.get_data('2017-03-20', '2017-03-23')
+	raw = StockData("../data/GOOG2.csv")
+	selected = raw.get_data('2018-01-02', '2020-09-22')
 	print(raw.data)
 	print(selected)

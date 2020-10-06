@@ -11,7 +11,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1123, 948)
+        Form.resize(1120, 950)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Form.sizePolicy().hasHeightForWidth())
+        Form.setSizePolicy(sizePolicy)
         self.appTitleLabel = QtWidgets.QLabel(Form)
         self.appTitleLabel.setGeometry(QtCore.QRect(4, 10, 1111, 101))
         font = QtGui.QFont()

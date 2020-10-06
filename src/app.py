@@ -46,9 +46,12 @@ class Main(qtw.QWidget, Ui_Form):
 			start_date, end_date = self.stock_data.get_period()
 			self.startDateEdit.setText(start_date)
 			self.endDateEdit.setText(end_date)
+			self.SMA1Edit.setText("15")
+			self.SMA2Edit.setText("50")
 
 			print(self.stock_data.data)
 			print(f"data loaded from {filepath}; period auto-selected: {start_date} to {end_date}")
+
 		except:
 			print("filepath provided is invalid.")
 

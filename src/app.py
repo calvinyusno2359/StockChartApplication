@@ -57,7 +57,7 @@ class Main(qtw.QWidget, Ui_Form):
 			self.SMA1Edit.setText("15")
 			self.SMA2Edit.setText("50")
 
-			self.report(f"Data loaded from {filepath}; period auto-selected: {start_date} to {end_date}")
+			self.report(f"Data loaded from {filepath}; period auto-selected: {start_date} to {end_date}.")
 			print(self.stock_data.data)
 
 		except:
@@ -82,18 +82,23 @@ class Main(qtw.QWidget, Ui_Form):
 			try:
 				self.selected_stock_data = self.stock_data.get_data(start_date, end_date)
 				print(self.selected_stock_data)
-				self.plot_graph('Close')
+
+				# builds a list of graphs to plot by checking the tickboxes
+				column_headers = ['Close']
+				if self.SMA1Checkbox.isChecked(): column_headers.append("SMA" + self.SMA1Edit.text())
+				if self.SMA2Checkbox.isChecked(): column_headers.append("SMA" + self.SMA2Edit.text())
+				self.plot_graph(column_headers)
 
 			except AssertionError as e:
-				self.report(f"Selected range is empty, {e}")
+				self.report(f"Selected range is empty, {e}.")
 
 			except AttributeError as e:
-				self.report(f"Stock data has not been loaded. Please specify filepath of relevant *.csv file, {e}")
+				self.report(f"Stock data has not been loaded. Please specify filepath of relevant *.csv file, {e}.")
 
 		except ValueError as e:
-			self.report(f"Time period has not been specified or does not match YYYY-MM-DD format, {e}")
+			self.report(f"Time period has not been specified or does not match YYYY-MM-DD format, {e}.")
 
-	def plot_graph(self, column_head):
+	def plot_graph(self, column_headers):
 		"""
 		Given non-empty selected_stock_data and a specified column_head name,
 		plots the graph in the canvas
@@ -101,18 +106,22 @@ class Main(qtw.QWidget, Ui_Form):
 		- Empty y_data: raise AssertionError
 		"""
 		self.figure.clear()
-
 		assert not self.selected_stock_data.empty
-		ax = self.figure.add_subplot(111)
+
 		# matplotlib has its own internal representation of datetime
 		# date2num converts datetime.datetime to this internal representation
-
 		x_data = list(mdates.date2num(
 		                              [datetime.strptime(dates, self.date_format).date()
 		                              for dates in self.selected_stock_data.index.values]
 		                              ))
-		y_data = list(self.selected_stock_data[column_head])
-		ax.plot(x_data, y_data)
+
+		for column_head in column_headers:
+			if column_head in self.selected_stock_data.columns:
+				ax = self.figure.add_subplot(111)
+				y_data = list(self.selected_stock_data[column_head])
+				ax.plot(x_data, y_data, label=column_head)
+				self.report(f"{column_head} data is being plotted.")
+			else: self.report(f"{column_head} data does not exist.")
 
 		# formatting
 		months_locator = mdates.MonthLocator()
@@ -123,16 +132,19 @@ class Main(qtw.QWidget, Ui_Form):
 		ax.format_ydata = lambda y: '$%1.2f' % y
 		ax.grid(True)
 		self.figure.autofmt_xdate()
-
+		self.figure.legend()
+		self.figure.tight_layout()
 		self.canvas.draw()
 
 	def report(self, string):
+		"""
+		Given a report (string), update the scroll area with this report
+		"""
 		report_text = qtw.QLabel(string)
 		self.scrollLayout.addWidget(report_text)
 
 		# scrolls to the latest report
 		latest_index = self.scrollLayout.count()-1
-		print(latest_index)
 		self.scrollArea.ensureWidgetVisible(self.scrollLayout.itemAt(latest_index).widget())
 		print(string)
 

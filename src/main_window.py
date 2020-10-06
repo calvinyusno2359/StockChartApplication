@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'src/main_window.ui'
+# Form implementation generated from reading ui file '.\src\main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.9.2
 #
@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1122, 948)
+        Form.resize(1123, 948)
         self.appTitleLabel = QtWidgets.QLabel(Form)
         self.appTitleLabel.setGeometry(QtCore.QRect(4, 10, 1111, 101))
         font = QtGui.QFont()
@@ -75,12 +75,12 @@ class Ui_Form(object):
         self.canvasLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.canvasLayout.setContentsMargins(0, 0, 0, 0)
         self.canvasLayout.setObjectName("canvasLayout")
-        self.checkSMA1 = QtWidgets.QCheckBox(Form)
-        self.checkSMA1.setGeometry(QtCore.QRect(870, 260, 61, 51))
-        self.checkSMA1.setObjectName("checkSMA1")
-        self.checkSMA2 = QtWidgets.QCheckBox(Form)
-        self.checkSMA2.setGeometry(QtCore.QRect(870, 320, 61, 51))
-        self.checkSMA2.setObjectName("checkSMA2")
+        self.SMA1Checkbox = QtWidgets.QCheckBox(Form)
+        self.SMA1Checkbox.setGeometry(QtCore.QRect(870, 260, 61, 51))
+        self.SMA1Checkbox.setObjectName("SMA1Checkbox")
+        self.SMA2Checkbox = QtWidgets.QCheckBox(Form)
+        self.SMA2Checkbox.setGeometry(QtCore.QRect(870, 320, 61, 51))
+        self.SMA2Checkbox.setObjectName("SMA2Checkbox")
         self.SMA1Edit = QtWidgets.QLineEdit(Form)
         self.SMA1Edit.setGeometry(QtCore.QRect(950, 260, 161, 51))
         font = QtGui.QFont()
@@ -116,8 +116,8 @@ class Ui_Form(object):
         self.endDateEdit.setPlaceholderText(_translate("Form", "YYYY-MM-DD"))
         self.startDateLabel.setText(_translate("Form", "Start Date"))
         self.endDateLabel.setText(_translate("Form", "End Date"))
-        self.checkSMA1.setText(_translate("Form", "SMA-1"))
-        self.checkSMA2.setText(_translate("Form", "SMA-2"))
+        self.SMA1Checkbox.setText(_translate("Form", "SMA-1"))
+        self.SMA2Checkbox.setText(_translate("Form", "SMA-2"))
         self.SMA1Edit.setPlaceholderText(_translate("Form", "15"))
         self.SMA2Edit.setPlaceholderText(_translate("Form", "50"))
 

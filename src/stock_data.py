@@ -35,11 +35,19 @@ class StockData():
 		self.selected_data = self.data[str(start_date):str(end_date)]
 		return self.selected_data
 
-	def check_data():
+	def check_data(self):
 		pass
 
-	def calculate_crossover():
+	def calculate_crossover(self):
 		pass
+
+	def get_period(self):
+		"""
+		Returns first and last index which make up the maximum period of stock data
+		"""
+		index = list(self.data.index)
+		(first, last) = (index[0], index[-1])
+		return (first, last)
 
 if __name__ == "__main__":
 	raw = StockData("../data/C31.SI.csv")

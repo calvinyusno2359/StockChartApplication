@@ -42,15 +42,20 @@ class Main(qtw.QWidget, Ui_Form):
 
 		try:
 			self.stock_data = StockData(filepath)
+
+			start_date, end_date = self.stock_data.get_period()
+			self.startDateEdit.setText(start_date)
+			self.endDateEdit.setText(end_date)
+
 			print(self.stock_data.data)
-			print(f"data loaded from {filepath}")
+			print(f"data loaded from {filepath}; period auto-selected: {start_date} to {end_date}")
 		except:
 			print("filepath provided is invalid.")
 
 	def update_graphics(self):
 		"""
 		Given inputted date string of format YYYY-MM-DD, creates a date object from it.
-		Then, use it to slice a copy of loaded stock_date to be used to update graphics.
+		Then, use it to slice a copy of loaded stock_data to be used to update graphics.
 		Error handling:
 		- Invalid date format: prompts user
 		- Non-existent stock_data: prompts user

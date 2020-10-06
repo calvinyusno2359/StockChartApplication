@@ -44,8 +44,10 @@ class Main(qtw.QWidget, Ui_Form):
 			self.stock_data = StockData(filepath)
 
 			start_date, end_date = self.stock_data.get_period()
+			period = f"{start_date} to {end_date}"
 			self.startDateEdit.setText(start_date)
 			self.endDateEdit.setText(end_date)
+			self.periodEdit.setText(period)
 			self.SMA1Edit.setText("15")
 			self.SMA2Edit.setText("50")
 

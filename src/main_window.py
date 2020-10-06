@@ -2,13 +2,11 @@
 
 # Form implementation generated from reading ui file 'src/main_window.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.2
+# Created by: PyQt5 UI code generator 5.9.2
 #
 # WARNING! All changes made in this file will be lost!
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -72,7 +70,7 @@ class Ui_Form(object):
         self.endDateLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.endDateLabel.setObjectName("endDateLabel")
         self.verticalLayoutWidget = QtWidgets.QWidget(Form)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 460, 1101, 481))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 450, 1101, 491))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.canvasLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.canvasLayout.setContentsMargins(0, 0, 0, 0)
@@ -132,3 +130,4 @@ if __name__ == "__main__":
     ui.setupUi(Form)
     Form.show()
     sys.exit(app.exec_())
+

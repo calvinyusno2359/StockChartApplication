@@ -17,6 +17,7 @@ class Main(qtw.QWidget, Ui_Form):
 	def __init__(self):
 		super().__init__()
 		self.setupUi(self)
+		self.setWindowTitle("Stock Chart & Moving Average Application")
 
 		# sets up a new figure to plot on, then instantiates a canvas and toolbar object
 		self.figure = plt.figure()
@@ -30,6 +31,11 @@ class Main(qtw.QWidget, Ui_Form):
 		# button connections
 		self.loadCSVButton.clicked.connect(self.load_data)
 		self.updateWindowButton.clicked.connect(self.update_graphics)
+
+		self.scrollwidget = qtw.QWidget()
+		self.scrollLayout = qtw.QVBoxLayout()
+		self.scrollwidget.setLayout(self.scrollLayout)
+		self.scrollArea.setWidget(self.scrollwidget)
 
 	def load_data(self):
 		"""
@@ -51,11 +57,11 @@ class Main(qtw.QWidget, Ui_Form):
 			self.SMA1Edit.setText("15")
 			self.SMA2Edit.setText("50")
 
+			self.report(f"Data loaded from {filepath}; period auto-selected: {start_date} to {end_date}")
 			print(self.stock_data.data)
-			print(f"data loaded from {filepath}; period auto-selected: {start_date} to {end_date}")
 
 		except:
-			print("filepath provided is invalid.")
+			self.report("Filepath provided is invalid.")
 
 	def update_graphics(self):
 		"""
@@ -71,7 +77,7 @@ class Main(qtw.QWidget, Ui_Form):
 			start_date = datetime.strptime(self.startDateEdit.text(), self.date_format).date()
 			end_date = datetime.strptime(self.endDateEdit.text(), self.date_format).date()
 			period = f"{start_date} to {end_date}"
-			print(f"Time period specified as: {period}")
+			self.report(f"Time period specified as: {period}. Plotting...")
 
 			try:
 				self.selected_stock_data = self.stock_data.get_data(start_date, end_date)
@@ -79,16 +85,13 @@ class Main(qtw.QWidget, Ui_Form):
 				self.plot_graph('Close')
 
 			except AssertionError as e:
-				print(e)
-				print("Selected range is empty.")
+				self.report(f"Selected range is empty, {e}")
 
 			except AttributeError as e:
-				print(e)
-				print("Stock data has not been loaded. Please specify filepath of relevant .csv file.")
+				self.report(f"Stock data has not been loaded. Please specify filepath of relevant .csv file, {e}")
 
 		except ValueError as e:
-			print(e)
-			print("Time period has not been specified or does not match YYYY-MM-DD format")
+			self.report(f"Time period has not been specified or does not match YYYY-MM-DD format, {e}")
 
 	def plot_graph(self, column_head):
 		"""
@@ -122,6 +125,16 @@ class Main(qtw.QWidget, Ui_Form):
 		self.figure.autofmt_xdate()
 
 		self.canvas.draw()
+
+	def report(self, string):
+		report_text = qtw.QLabel(string)
+		self.scrollLayout.addWidget(report_text)
+
+		# scrolls to the latest report
+		latest_index = self.scrollLayout.count()-1
+		print(latest_index)
+		self.scrollArea.ensureWidgetVisible(self.scrollLayout.itemAt(latest_index).widget())
+		print(string)
 
 if __name__ == "__main__":
 	app = qtw.QApplication([])

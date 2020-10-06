@@ -94,7 +94,7 @@ class Ui_Form(object):
         self.SMA2Edit.setFont(font)
         self.SMA2Edit.setObjectName("SMA2Edit")
         self.scrollArea = QtWidgets.QScrollArea(Form)
-        self.scrollArea.setGeometry(QtCore.QRect(9, 390, 1101, 51))
+        self.scrollArea.setGeometry(QtCore.QRect(10, 390, 1101, 51))
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()

@@ -19,7 +19,7 @@ The `.ui` files are created and is editable using Qt Designer which can be downl
 
 To compile the UI files, use the following command:
 ```
-pyuic5 -x -o <output_file.py> <input_file.ui>
+pyuic5 -x -o .\src\<output_file.py> .\src\<input_file.ui>
 ```
 
 ## Compiling Application `.exe`

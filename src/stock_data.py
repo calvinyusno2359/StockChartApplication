@@ -3,6 +3,7 @@ import pandas as pd
 class StockData():
 	def __init__(self, filepath):
 		self.data = self.read_csv(filepath).set_index('Date')
+		self.dataraw = self.read_csv("./data/GOOG.csv")
 		# self.check_data
 		# self.calculate_SMA
 		# self.calculate_crossover
@@ -22,7 +23,20 @@ class StockData():
 		"""
 		Given self.data and N, find the SMA(N) and augments self.data with the SMA data as new column
 		"""
-		return self
+		df = dataraw #Extract full dataframe from the actual data(to check if there is enough data for sma)
+		dateList = self.index.values.tolist() #List of data in self dataframe
+		returnList = []
+		for date in dateList: #for date in dateList
+			dateIndex = df[df["Date"]==date].index.values[0] # find the index of date in the full data
+	#         print(dateIndex)
+			if dateIndex < n: # if date index is less than n: append None
+				returnList.append(None)
+			else:
+				sum = 0
+				for i in range(n):
+					sum += df.iloc[dateIndex-i]["Adj Close"]#else sum of data from dateIndex to dateIndex-i(0,1,2...n)
+				returnList.append(sum/n)  #append the SMA for each day to a list
+		return returnList #returnlist
 
 	def get_data(self, start_date, end_date):
 		"""
@@ -35,8 +49,10 @@ class StockData():
 		self.selected_data = self.data[str(start_date):str(end_date)]
 		return self.selected_data
 
-	def check_data(self):
-		pass
+
+	def check_data(self, filename):
+		newData = self.interpolate() #function to fill in naan with average with the one previous and after data
+		df.to_csv(filename, index=False) #overwrite old csv with new clean data csv
 
 	def calculate_crossover(self):
 		pass

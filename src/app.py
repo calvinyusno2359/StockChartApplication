@@ -88,7 +88,7 @@ class Main(qtw.QWidget, Ui_Form):
 				self.report(f"Selected range is empty, {e}")
 
 			except AttributeError as e:
-				self.report(f"Stock data has not been loaded. Please specify filepath of relevant .csv file, {e}")
+				self.report(f"Stock data has not been loaded. Please specify filepath of relevant *.csv file, {e}")
 
 		except ValueError as e:
 			self.report(f"Time period has not been specified or does not match YYYY-MM-DD format, {e}")

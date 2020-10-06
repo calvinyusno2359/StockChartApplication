@@ -67,6 +67,7 @@ class Main(qtw.QWidget, Ui_Form):
 		"""
 		Given inputted date string of format YYYY-MM-DD, creates a date object from it.
 		Then, use it to slice a copy of loaded stock_data to be used to update graphics.
+		Checks checkboxes first to see if SMA1 and SMA2 lines need to be drawn.
 		Error handling:
 		- Invalid date format: prompts user
 		- Non-existent stock_data: prompts user

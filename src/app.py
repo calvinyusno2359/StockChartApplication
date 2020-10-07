@@ -82,6 +82,7 @@ class Main(qtw.QWidget, Ui_Form):
 			start_date = datetime.strptime(self.startDateEdit.text(), self.date_format).date()
 			end_date = datetime.strptime(self.endDateEdit.text(), self.date_format).date()
 			period = f"{start_date} to {end_date}"
+			self.periodEdit.setText(period)
 
 			# builds a list of graphs to plot by checking the tickboxes
 			column_headers = ['Close']

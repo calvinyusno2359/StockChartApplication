@@ -82,16 +82,21 @@ class Main(qtw.QWidget, Ui_Form):
 			start_date = datetime.strptime(self.startDateEdit.text(), self.date_format).date()
 			end_date = datetime.strptime(self.endDateEdit.text(), self.date_format).date()
 			period = f"{start_date} to {end_date}"
+
+			# builds a list of graphs to plot by checking the tickboxes
+			column_headers = ['Close']
+			if self.SMA1Checkbox.isChecked():
+				column_headers.append("SMA" + self.SMA1Edit.text())
+				self.stock_data.calculate_SMA(int(self.SMA1Edit.text()))
+			if self.SMA2Checkbox.isChecked():
+				column_headers.append("SMA" + self.SMA2Edit.text())
+				self.stock_data.calculate_SMA(int(self.SMA2Edit.text()))
+
 			self.report(f"Time period specified as: {period}. Plotting...")
 
 			try:
 				self.selected_stock_data = self.stock_data.get_data(start_date, end_date)
 				print(self.selected_stock_data)
-
-				# builds a list of graphs to plot by checking the tickboxes
-				column_headers = ['Close']
-				if self.SMA1Checkbox.isChecked(): column_headers.append("SMA" + self.SMA1Edit.text())
-				if self.SMA2Checkbox.isChecked(): column_headers.append("SMA" + self.SMA2Edit.text())
 				self.plot_graph(column_headers)
 
 			except AssertionError as e:

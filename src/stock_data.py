@@ -90,4 +90,3 @@ if __name__ == "__main__":
 	new.calculate_SMA(50)
 	selected = new.get_data('2020-01-02', '2020-09-22')
 	print(selected)
-

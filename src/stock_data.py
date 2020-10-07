@@ -67,7 +67,28 @@ class StockData():
 		return self
 
 	def calculate_crossover(self):
-		pass
+		stock_position = []  # which SMA line is on top
+		stock_signal = []  # the buy/sell signal --> the 1s and -1s
+		for i in range(len(SMA1)):  # ensure the length of the list is the same as the SMA one
+			if SMA1[i] > SMA2[i]:
+				stock_position.append(1)  # SMA1 above SMA2
+			elif SMA1[i] < SMA2[i]:
+				stock_position.append(0)  # SMA2 above SMA1
+			elif SMA1[i] == SMA2[i]:
+				# if the SMAs are equal, repeat the previous entry
+				stock_position.append(stock_position[i-1])
+			else:
+				stock_position.append('NA')
+
+			for j in range(len(stock_position)):  # find the places where crossover occurs
+				if j == 0:
+					# 'shifts' the data one period to the right
+					stock_signal.append('NA')
+				else:
+					# calculation for the crossover signals
+					stock_signal.append(stock_position[j] - stock_position[j-1])
+
+		return (stock_position, stock_signal)
 
 	def get_period(self):
 		"""

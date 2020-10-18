@@ -70,35 +70,56 @@ class StockData():
         
         col_head1 = 'Position'
         col_head2 = 'Signal'
+        col_head3 = 'Buy'
+        col_head4 = 'Sell'
         df = self.data
         
         SMAlist = self.data.index.values.tolist() #to ensure the correct number of elements in the loop
         SMA1 = df.iloc[:, 6].tolist() 
-        #extracts the SMA from the specific column in self.data
+        #extracts the SMA from the specific column in self.data where SMA data will be 
         SMA2 = df.iloc[:, 7].tolist()
         
         stockPosition = []  # which SMA line is on top
         stockSignal = []  # the buy/sell signal --> the 1s and -1s
+        buySignal = []  # filtered out location of buy signals
+        sellSignal = []  #filtered out location of sell signals
         for i in range(len(SMAlist)):  #goes through every element in the SMA values
             if SMA1[i] > SMA2[i]:
                 stockPosition.append(1)  # SMA1 above SMA2
             elif SMA1[i] < SMA2[i]:
                 stockPosition.append(0)  # SMA2 above SMA1
             elif SMA1[i] == SMA2[i]:
-                # if the SMAs are equal, repeat the previous entry
+                # if the SMAs are equal, repeat the previous entry because no crossover has occured yet
                 stockPosition.append(stockPosition[i-1])
             else:
-                stockPosition.append(np.nan)
+                stockPosition.append(np.nan) #if no data, leave blank
 
         for j in range(len(stockPosition)):  # find the places where crossover occurs
             if j == 0:
-                # 'shifts' the data one period to the right
+                # 'shifts' the data one period to the right to ensure crossovers are reflected on the correct date
                 stockSignal.append(np.nan)
             else:
-                # calculation for the crossover signals
+                # calculation for the crossover signals                    
                 stockSignal.append(stockPosition[j] - stockPosition[j-1])
+
+        for k in range(len(stockSignal)): #finding location of buy signals
+            if stockSignal[k] == 1:
+                buySignal.append(1) #adds '1' at the location of buy signals in a separate column
+            else:
+                buySignal.append(np.nan) #if no signal leave blank
+                
+        for k in range(len(stockSignal)): #finding location of sell signals
+            if stockSignal[k] == -1:
+                sellSignal.append(-1) #adds '-1' at the location of sell signals in a separate column
+            else:
+                sellSignal.append(np.nan) #if no signal leave blank
+                            
+               
         self.data[col_head1] = stockPosition 
         self.data[col_head2] = stockSignal
+        self.data[col_head3] = buySignal
+        self.data[col_head4] = sellSignal
+       
         print(self.data)
         self.data.to_csv(self.filepath, index=True)
 
@@ -118,10 +139,11 @@ if __name__ == "__main__":
     # selected = raw.get_data('2018-01-02', '2020-09-22')
     # print(selected)
 
-    new = StockData("../data/GOOG.csv")
+    new = StockData(r"C:\Users\weiyang\Desktop\Readings\Y3S1\QF205\Project\StockChartApplication\data\GOOG2.csv")
     print(new.data)
     new.calculate_SMA(15)
     new.calculate_SMA(50)
     new.calculate_SMA(50)
+    new.calculate_crossover()
     selected = new.get_data('2020-01-02', '2020-09-22')
     print(selected)

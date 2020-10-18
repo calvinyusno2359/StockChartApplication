@@ -158,7 +158,7 @@ class Main(qtw.QWidget, Ui_Form):
 		# matplotlib has its own internal representation of datetime
 		# date2num converts datetime.datetime to this internal representation
 		isChecked = self.SMA1Checkbox.isChecked() and self.SMA2Checkbox.isChecked()
-		if 'Buy' and 'Sell' in self.selected_stock_data.columns:
+		if ('Buy' and 'Sell' in self.selected_stock_data.columns) and isChecked:
 			x_data = list(mdates.date2num(
 			                              [datetime.strptime(dates, self.date_format).date()
 			                              for dates in self.selected_stock_data.index.values]

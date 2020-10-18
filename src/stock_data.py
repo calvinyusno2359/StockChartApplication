@@ -104,6 +104,7 @@ if __name__ == "__main__":
 	# selected = raw.get_data('2018-01-02', '2020-09-22')
 	# print(selected)
 
+	old = StockData("../data/C31.SI.csv")
 	new = StockData("../data/GOOG.csv")
 	print(new.data)
 	new.calculate_SMA(15)

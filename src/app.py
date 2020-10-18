@@ -96,9 +96,13 @@ class Main(qtw.QWidget, Ui_Form):
 			self.report(f"Time period specified as: {period}. Plotting...")
 
 			try:
+				if len(column_headers) == 3:
+					self.stock_data.calculate_crossover(column_headers[1], column_headers[2])
+
 				self.selected_stock_data = self.stock_data.get_data(start_date, end_date)
 				print(self.selected_stock_data)
 				self.plot_graph(column_headers)
+				self.plot_signals()
 
 			except AssertionError as e:
 				self.report(f"Selected range is empty, {e}.")
@@ -126,13 +130,16 @@ class Main(qtw.QWidget, Ui_Form):
 		                              for dates in self.selected_stock_data.index.values]
 		                              ))
 
+		idx = 0
+		colors = ['black', 'blue', 'orange']
 		for column_head in column_headers:
 			if column_head in self.selected_stock_data.columns:
 				ax = self.figure.add_subplot(111)
 				y_data = list(self.selected_stock_data[column_head])
-				ax.plot(x_data, y_data, label=column_head)
+				ax.plot(x_data, y_data, label=column_head, color=colors[idx])
 				self.report(f"{column_head} data is being plotted.")
 			else: self.report(f"{column_head} data does not exist.")
+			idx += 1
 
 		# formatting
 		months_locator = mdates.MonthLocator()
@@ -146,6 +153,25 @@ class Main(qtw.QWidget, Ui_Form):
 		self.figure.legend()
 		self.figure.tight_layout()
 		self.canvas.draw()
+
+	def plot_signals(self):
+		# matplotlib has its own internal representation of datetime
+		# date2num converts datetime.datetime to this internal representation
+		isChecked = self.SMA1Checkbox.isChecked() and self.SMA2Checkbox.isChecked()
+		if 'Buy' and 'Sell' in self.selected_stock_data.columns:
+			x_data = list(mdates.date2num(
+			                              [datetime.strptime(dates, self.date_format).date()
+			                              for dates in self.selected_stock_data.index.values]
+			                              ))
+			ybuy_data = list(self.selected_stock_data['Buy'])
+			ysell_data = list(self.selected_stock_data['Sell'])
+			ax = self.figure.add_subplot(111)
+			ax.scatter(x_data, ybuy_data, label='Buy', color='green')
+			ax.scatter(x_data, ysell_data, label='Sell', color='red')
+
+			self.figure.legend()
+			self.figure.tight_layout()
+			self.canvas.draw()
 
 	def report(self, string):
 		"""

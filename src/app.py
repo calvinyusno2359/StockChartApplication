@@ -1,9 +1,9 @@
 import sys, os
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-
 from pathlib import Path
 from datetime import datetime
+
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 
@@ -166,8 +166,8 @@ class Main(qtw.QWidget, Ui_Form):
 			ybuy_data = list(self.selected_stock_data['Buy'])
 			ysell_data = list(self.selected_stock_data['Sell'])
 			ax = self.figure.add_subplot(111)
-			ax.scatter(x_data, ybuy_data, label='Buy', color='green')
-			ax.scatter(x_data, ysell_data, label='Sell', color='red')
+			ax.plot(x_data, ybuy_data, label='Buy', color='green', markersize=10, marker='^')
+			ax.plot(x_data, ysell_data, label='Sell', color='red', markersize=10, marker='v')
 
 			self.figure.legend()
 			self.figure.tight_layout()

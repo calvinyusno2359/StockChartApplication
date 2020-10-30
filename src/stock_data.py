@@ -61,6 +61,34 @@ class StockData():
 		self.data.to_csv(self.filepath, index=overwrite)
 		return self
 
+	def get_data(self, start_date, end_date):
+		"""
+		returns a subset of the stock data ranging from start_date to end_date inclusive
+
+		Parameters
+		start_date : str
+			start date of stock data range, must be of format YYYY-MM-DD
+		end_date : str
+			end date of stokc data range, must be of format YYYY-MM-DD
+
+		Returns:
+		selected_data : DataFrame
+			stock data dataframe indexed from specified start to end date inclusive
+		"""
+		self.selected_data = self.data[start_date:end_date]
+		return self.selected_data
+
+	def get_period(self):
+		"""
+		returns a string tuple of the first and last index which make up the maximum period of StockData
+
+		Returns
+		period : (str, str)
+		"""
+		index = list(self.data.index)
+		(first, last) = (str(index[0].date()), str(index[-1].date()))
+		return (first, last)
+
 	def calculate_SMA(self, n):
 		"""
 		Given self.data and N, find the SMA(N) and augments self.data with the SMA data as new column
@@ -89,17 +117,6 @@ class StockData():
 			self.data.to_csv(self.filepath, index=True)
 
 		return self
-
-	def get_data(self, start_date, end_date):
-		"""
-		Given start_date and end_date objects, return the corresponding slice of self.data
-
-		Error handling:
-		- end_date < start_date: selects none
-		- date out of bounds on either side: selects up to max available data on the side that is oob
-		"""
-		self.selected_data = self.data[str(start_date):str(end_date)]
-		return self.selected_data
 
 	def calculate_crossover(self, SMAa, SMAb):
 
@@ -155,14 +172,6 @@ class StockData():
 		self.data.to_csv(self.filepath, index=True)
 		return self
 
-	def get_period(self):
-		"""
-		Returns first and last index which make up the maximum period of stock data
-		"""
-		index = list(self.data.index)
-		(first, last) = (index[0], index[-1])
-		return (first, last)
-
 if __name__ == "__main__":
 	# How working data looks like
 	# raw = StockData("../data/GOOG2.csv")
@@ -172,9 +181,10 @@ if __name__ == "__main__":
 	old = StockData("../data/C31.SI.csv")
 	new = StockData("../data/GOOG.csv")
 	print(new.data)
+	print(new.get_period())
 	# new.calculate_SMA(15)
 	# new.calculate_SMA(50)
 	# new.calculate_SMA(50) # should not run again because data alr exists
 	# new.calculate_crossover('SMA15', 'SMA50')
-	# selected = new.get_data('2020-01-02', '2020-09-22')
-	# print(selected)
+	selected = new.get_data('2020-01-02', '2020-09-22')
+	print(selected)

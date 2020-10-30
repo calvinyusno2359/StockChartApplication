@@ -37,6 +37,9 @@ class Main(qtw.QWidget, Ui_Form):
 		self.scrollwidget.setLayout(self.scrollLayout)
 		self.scrollArea.setWidget(self.scrollwidget)
 
+		# auto-complete feauture
+		self.filePathEdit.setText("../data/GOOG.csv")
+
 	def load_data(self):
 		"""
 		Given inputted filepath (str), loads stock data from csv as object StockData.
@@ -79,8 +82,10 @@ class Main(qtw.QWidget, Ui_Form):
 		self.date_format = '%Y-%m-%d'
 
 		try:
-			start_date = datetime.strptime(self.startDateEdit.text(), self.date_format).date()
-			end_date = datetime.strptime(self.endDateEdit.text(), self.date_format).date()
+			# start_date = datetime.strptime(self.startDateEdit.text(), self.date_format).date()
+			# end_date = datetime.strptime(self.endDateEdit.text(), self.date_format).date()
+			start_date = self.startDateEdit.text()
+			end_date = self.endDateEdit.text()
 			period = f"{start_date} to {end_date}"
 			self.periodEdit.setText(period)
 

@@ -44,9 +44,13 @@ class StockData():
 		try: return pd.read_csv(filepath, index_col=0, parse_dates=True)
 		except IOError as e: raise Exception(e)
 
-	def check_data(self):
+	def check_data(self, overwrite=True):
 		"""
 		checks and handles missing data by filling in missing values by interpolation
+
+		Parameters
+		overwrite : bool (True)
+			if True, overwrites original source stock data .csv file
 
 		Returns
 		self : StockData
@@ -54,7 +58,7 @@ class StockData():
 
 		# function to fill in missing values with average with the one previous and after data (interpolation)
 		self.data = self.data.interpolate()
-		self.data.to_csv(self.filepath, index=True)
+		self.data.to_csv(self.filepath, index=overwrite)
 		return self
 
 	def calculate_SMA(self, n):

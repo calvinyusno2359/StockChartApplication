@@ -15,7 +15,7 @@ class StockData():
 	"""
 	def __init__(self, filepath):
 		"""
-		initializes StockData object by parsing stock data .csv file
+		initializes StockData object by parsing stock data .csv file, also checks and handles missing data
 
 		Parameters
 		filepath : str
@@ -43,6 +43,19 @@ class StockData():
 		"""
 		try: return pd.read_csv(filepath, index_col=0, parse_dates=True)
 		except IOError as e: raise Exception(e)
+
+	def check_data(self):
+		"""
+		checks and handles missing data by filling in missing values by interpolation
+
+		Returns
+		self : StockData
+		"""
+
+		# function to fill in missing values with average with the one previous and after data (interpolation)
+		self.data = self.data.interpolate()
+		self.data.to_csv(self.filepath, index=True)
+		return self
 
 	def calculate_SMA(self, n):
 		"""
@@ -83,14 +96,6 @@ class StockData():
 		"""
 		self.selected_data = self.data[str(start_date):str(end_date)]
 		return self.selected_data
-
-	def check_data(self):
-		self.data.reset_index()
-		# function to fill in naan with average with the one previous and after data
-		self.data = self.data.interpolate()
-		# overwrite old csv with new clean data csv
-		self.data.to_csv(self.filepath, index=True)
-		return self
 
 	def calculate_crossover(self, SMAa, SMAb):
 

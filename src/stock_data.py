@@ -2,18 +2,46 @@ import numpy as np
 import pandas as pd
 
 class StockData():
+	"""
+	handles and operates on yahoo stock data (.csv)
+
+	Attributes
+	.filepath : str
+		filepath to the source stock data .csv file used to initialize StockData
+	.data : DataFrame
+		dataframe containing the stock data, indexed by datetime objects
+
+	Methods
+	"""
 	def __init__(self, filepath):
+		"""
+		initializes StockData object by parsing stock data .csv file
+
+		Parameters
+		filepath : str
+			filepath to the stock data .csv file, can be relative or absolute
+		"""
 		self.filepath = filepath
-		self.data = self.read_csv(filepath).set_index('Date')
+		self.data = self.read_csv(filepath)
 		self.check_data()
 
 	def read_csv(self, filepath):
 		"""
-		Given inputted csv filepath (str), parses csv into a dataframe and returns it
-		Error handling:
-		- Invalid filepath: raises exception
+		parses .csv stock data file into a dataframe, assumes first column are dates
+
+		Parameters
+		filepath : str
+			filepath to the stock data .csv file, can be relative or absolute
+
+		Returns
+		data : DataFrame
+			stock data dataframe indexed by dates
+
+		Raises
+		IOError :
+			failed I/O operation, e.g: invalid filepath
 		"""
-		try: return pd.read_csv(filepath)
+		try: return pd.read_csv(filepath, index_col=0, parse_dates=True)
 		except IOError as e: raise Exception(e)
 
 	def calculate_SMA(self, n):
@@ -135,9 +163,9 @@ if __name__ == "__main__":
 	old = StockData("../data/C31.SI.csv")
 	new = StockData("../data/GOOG.csv")
 	print(new.data)
-	new.calculate_SMA(15)
-	new.calculate_SMA(50)
-	new.calculate_SMA(50) # should not run again because data alr exists
-	new.calculate_crossover('SMA15', 'SMA50')
-	selected = new.get_data('2020-01-02', '2020-09-22')
-	print(selected)
+	# new.calculate_SMA(15)
+	# new.calculate_SMA(50)
+	# new.calculate_SMA(50) # should not run again because data alr exists
+	# new.calculate_crossover('SMA15', 'SMA50')
+	# selected = new.get_data('2020-01-02', '2020-09-22')
+	# print(selected)

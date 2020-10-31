@@ -1,6 +1,7 @@
 import sys, os
 from pathlib import Path
 from datetime import datetime
+from functools import partial
 
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
@@ -136,10 +137,6 @@ class Main(qtw.QWidget, Ui_Form):
 		"""
 		report_text = qtw.QLabel(string)
 		self.scrollLayout.addWidget(report_text)
-
-		# scrolls to the latest report
-		latest_index = self.scrollLayout.count()-1
-		self.scrollArea.ensureWidgetVisible(self.scrollLayout.itemAt(latest_index).widget())
 		print(string)
 
 	def center(self):

@@ -132,7 +132,7 @@ class StockData():
 		"""
 		if SMA1 < SMA2: signal = self.data[SMA1] - self.data[SMA2]
 		elif SMA1 > SMA2: signal = self.data[SMA2] - self.data[SMA1]
-		else: raise Exception(f"{SMA1} & {SMA2} provided are the same. Must be different SMA.")
+		else: raise Exception(f"{SMA1} & {SMA2} provided are the same. They must be different SMA.")
 
 		signal[signal > 0] = 1
 		signal[signal <= 0] = 0

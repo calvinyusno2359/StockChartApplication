@@ -58,6 +58,7 @@ class Main(qtw.QWidget, Ui_Form):
 			# auto-complete feauture
 			start_date, end_date = self.stock_data.get_period()
 			period = f"{start_date} to {end_date}"
+			print(start_date, end_date)
 			self.startDateEdit.setText(start_date)
 			self.endDateEdit.setText(end_date)
 			self.periodEdit.setText(period)
@@ -67,8 +68,11 @@ class Main(qtw.QWidget, Ui_Form):
 			self.report(f"Data loaded from {filepath}; period auto-selected: {start_date} to {end_date}.")
 			print(self.stock_data.data)
 
-		except:
-			self.report("Filepath provided is invalid.")
+		except IOError as e:
+			self.report(f"Filepath provided is invalid or fail to open .csv file. {e}")
+
+		except TypeError as e:
+			self.report(f"The return tuple is probably (nan, nan) because .csv is empty")
 
 	def update_canvas(self):
 		"""
@@ -112,8 +116,19 @@ class Main(qtw.QWidget, Ui_Form):
 			self.figure.tight_layout()
 			self.canvas.draw()
 
+			self.report(f"Plotting {column_headers} data from period: {start_date} to {end_date}.")
+			print(self.selected_stock_data)
+
 		except ValueError as e:
 			self.report(f"Time period has not been specified or does not match YYYY-MM-DD format, {e}.")
+
+		except AssertionError as e:
+			self.report(f"Selected range is empty, {e}")
+
+		except KeyError as e:
+			self.report(f"Data for this date does not exist: {e}")
+
+		except Exception as e: self.report(e)
 
 	def report(self, string):
 		"""

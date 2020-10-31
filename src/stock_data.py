@@ -14,38 +14,30 @@ class StockData():
 	.selected_data : DataFrame
 		dataframe ontaining the selected stock data, indexed by datetime string of format YYYY=MM-DD
 
-	Methodscolumn_headers
+	Methods
+	__init__
+	check_data
+	get_data
+	get_period
+	calculate_SMA
+	calculate_crossover
+	plot_graph
 	"""
 	def __init__(self, filepath):
 		"""
-		initializes StockData object by parsing stock data .csv file, also checks and handles missing data
+		initializes StockData object by parsing stock data .csv file into a dataframe (assumes 'Date' column exists and uses it for index), also checks and handles missing data
 
 		Parameters
 		filepath : str
 			filepath to the stock data .csv file, can be relative or absolute
-		"""
-		self.filepath = filepath
-		self.data = self.read_csv(filepath)
-		self.check_data()
-
-	def read_csv(self, filepath):
-		"""
-		parses .csv stock data file into a dataframe, assumes first column are dates
-
-		Parameters
-		filepath : str
-			filepath to the stock data .csv file, can be relative or absolute
-
-		Returns
-		data : DataFrame
-			stock data dataframe indexed by dates
 
 		Raises
 		IOError :
-			failed I/O operation, e.g: invalid filepath
+			failed I/O operation, e.g: invalid filepath, fail to open .csv
 		"""
-		try: return pd.read_csv(filepath, index_col=0)
-		except IOError as e: raise Exception(e)
+		self.filepath = filepath
+		self.data = pd.read_csv(filepath).set_index('Date')
+		self.check_data()
 
 	def check_data(self, overwrite=True):
 		"""
@@ -79,7 +71,7 @@ class StockData():
 
 		Raises
 		KeyError :
-			the key provided does not exist
+			data for this date does not exist
 		"""
 		self.selected_data = self.data[start_date:end_date]
 		return self.selected_data
@@ -90,6 +82,10 @@ class StockData():
 
 		Returns
 		period : (str, str)
+
+		Raises
+		TypeError :
+			the return tuple is probably (nan, nan) because .csv is empty
 		"""
 		index = list(self.data.index)
 		(first, last) = (index[0], index[-1])
@@ -131,12 +127,12 @@ class StockData():
 		self : StockData
 
 		Raises
-		ValueError :
-			SMA1 and SMA2 str is the same, they must be different
+		Exception :
+			SMA1 and SMA2 provided are the same, they must be different
 		"""
 		if SMA1 < SMA2: signal = self.data[SMA1] - self.data[SMA2]
 		elif SMA1 > SMA2: signal = self.data[SMA2] - self.data[SMA1]
-		else: raise ValueError(f"{SMA1} & {SMA2} provided are the same. Must be different SMA.")
+		else: raise Exception(f"{SMA1} & {SMA2} provided are the same. Must be different SMA.")
 
 		signal[signal > 0] = 1
 		signal[signal <= 0] = 0

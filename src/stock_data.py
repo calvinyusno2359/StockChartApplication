@@ -165,7 +165,11 @@ class StockData():
 			self.selected_data is empty, perhaps due to OOB or invalid range
 		"""
 		assert not self.selected_data.empty
-		self.selected_data[col_headers].plot(style=style, ax=ax, grid=True, linewidth=1)
+		self.selected_data[col_headers].plot(style=style,
+		                                     ax=ax,
+		                                     grid=True,
+		                                     x_compat=True,
+		                                     linewidth=1)
 		if show: plt.show()
 
 	def calculate_SMA(self, n):

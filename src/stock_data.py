@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 class StockData():
 	"""
@@ -41,7 +42,7 @@ class StockData():
 		IOError :
 			failed I/O operation, e.g: invalid filepath
 		"""
-		try: return pd.read_csv(filepath, index_col=0, parse_dates=True)
+		try: return pd.read_csv(filepath, index_col=0)
 		except IOError as e: raise Exception(e)
 
 	def check_data(self, overwrite=True):
@@ -74,6 +75,10 @@ class StockData():
 		Returns:
 		selected_data : DataFrame
 			stock data dataframe indexed from specified start to end date inclusive
+
+		Raises
+		KeyError :
+			the key provided does not exist
 		"""
 		self.selected_data = self.data[start_date:end_date]
 		return self.selected_data
@@ -86,7 +91,7 @@ class StockData():
 		period : (str, str)
 		"""
 		index = list(self.data.index)
-		(first, last) = (str(index[0].date()), str(index[-1].date()))
+		(first, last) = (index[0], index[-1])
 		return (first, last)
 
 	def _calculate_SMA(self, n, col='Close'):
@@ -142,6 +147,23 @@ class StockData():
 
 		self.data.to_csv(self.filepath, index=True)
 		return self
+
+	def plot_graph(self, col_headers, style, show=True):
+		"""
+		plots columns of values as line plot and/or columns of values as scatter plot as specified by style, returns the axis plot
+
+		Parameters
+		col_headers : [str, str, ...]
+			a list containing column header names whose data are to be plotted
+		style : [str, str, ...]
+			a list of matplotlib built-in style strings to indicate whether to plot line or scatter and the colours corresponding to each value in col_headers (hence, must be same length)
+
+		Returns
+		ax : Axes
+		"""
+		ax = self.data[col_headers].plot(style=style,linewidth=1)
+		if show: plt.show()
+		return ax
 
 	def calculate_SMA(self, n):
 		"""
@@ -238,10 +260,14 @@ if __name__ == "__main__":
 	print(new.get_period())
 	new._calculate_SMA(15)
 	new._calculate_SMA(50)
-	new._calculate_crossover('SMA15', 'SMA50')
+	new._calculate_crossover('SMA15', 'SMA50', 'SMA15')
+
 	# new.calculate_SMA(15)
 	# new.calculate_SMA(50)
 	# new.calculate_SMA(50) # should not run again because data alr exists
 	# new.calculate_crossover('SMA15', 'SMA50')
-	selected = new.get_data('2020-01-02', '2020-09-22')
+
+	selected = new.get_data('2020-02-01', '2020-09-21')
 	print(selected)
+	ax = new.plot_graph(['Close', 'SMA15', 'SMA50','Sell','Buy'], ['k-','b-','c-','ro','yo'], False)
+	plt.show()

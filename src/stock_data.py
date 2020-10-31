@@ -89,6 +89,27 @@ class StockData():
 		(first, last) = (str(index[0].date()), str(index[-1].date()))
 		return (first, last)
 
+	def _calculate_SMA(self, n, col='Close'):
+		"""
+		calculates simple moving average (SMA) and augments the stock dataframe with this SMA(n) data as a new column
+
+		Parameters
+		n : int
+			the amount of stock data to use to calculate average
+		col : str ('Close')
+			the column head name of the values to use to calculate average
+
+		Returns
+		self : StockData
+		"""
+		sma = self.data[col].rolling(n).mean()
+		self.data[f'SMA{n}'] = sma
+		self.data.to_csv(self.filepath, index=True)
+		return self
+
+	def _calculate_crossover(self):
+		pass
+
 	def calculate_SMA(self, n):
 		"""
 		Given self.data and N, find the SMA(N) and augments self.data with the SMA data as new column
@@ -182,6 +203,8 @@ if __name__ == "__main__":
 	new = StockData("../data/GOOG.csv")
 	print(new.data)
 	print(new.get_period())
+	new._calculate_SMA(15)
+	new._calculate_SMA(50)
 	# new.calculate_SMA(15)
 	# new.calculate_SMA(50)
 	# new.calculate_SMA(50) # should not run again because data alr exists

@@ -20,8 +20,7 @@ class Main(qtw.QWidget, Ui_Form):
 		self.setWindowTitle("Stock Chart & Moving Average Application")
 
 		# sets up a new figure to plot on, then instantiates a canvas and toolbar object
-		self.figure = plt.figure()
-		self.ax = self.figure.add_subplot(111)
+		self.figure, self.ax = plt.subplots()
 		self.canvas = FigureCanvas(self.figure)
 		self.toolbar = NavigationToolbar(self.canvas, self)
 
@@ -80,13 +79,23 @@ class Main(qtw.QWidget, Ui_Form):
 			period = f"{start_date} to {end_date}"
 			self.periodEdit.setText(period)
 
+			# builds a list of graphs to plot by checking the tickboxes
+			column_headers = ['Close']
+			if self.SMA1Checkbox.isChecked():
+				column_headers.append("SMA" + self.SMA1Edit.text())
+				self.stock_data._calculate_SMA(int(self.SMA1Edit.text()))
+			if self.SMA2Checkbox.isChecked():
+				column_headers.append("SMA" + self.SMA2Edit.text())
+				self.stock_data._calculate_SMA(int(self.SMA2Edit.text()))
+
+			self.stock_data._calculate_crossover(column_headers[1], column_headers[2], column_headers[1])
+
 			self.selected_stock_data = self.stock_data.get_data(start_date, end_date)
 			print(self.selected_stock_data)
 
-			column_headers = ['Close', 'SMA15', 'SMA50','Sell','Buy']
+			column_headers = ['Close', 'SMA15', 'SMA50', 'Sell', 'Buy']
 			style = ['k-','b-','c-','ro','yo']
-			self.stock_data.plot_graph(column_headers, style, show=False)
-			# plt.plot(self.selected_stock_data.index, self.selected_stock_data[column_headers], style=style)
+			self.stock_data.plot_graph(column_headers, style=style, ax=self.ax, show=False)
 			self.figure.legend()
 			self.figure.tight_layout()
 			self.canvas.draw()

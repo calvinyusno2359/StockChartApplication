@@ -58,7 +58,6 @@ class StockData():
 		Returns
 		self : StockData
 		"""
-
 		# function to fill in missing values with average with the one previous and after data (interpolation)
 		self.data = self.data.interpolate()
 		self.data.to_csv(self.filepath, index=overwrite)
@@ -135,7 +134,6 @@ class StockData():
 		ValueError :
 			SMA1 and SMA2 str is the same, they must be different
 		"""
-
 		if SMA1 < SMA2: signal = self.data[SMA1] - self.data[SMA2]
 		elif SMA1 > SMA2: signal = self.data[SMA2] - self.data[SMA1]
 		else: raise ValueError(f"{SMA1} & {SMA2} provided are the same. Must be different SMA.")
@@ -152,18 +150,17 @@ class StockData():
 		self.data.to_csv(self.filepath, index=True)
 		return self
 
-	def plot_graph(self, col_headers, style, show=True):
+	def plot_graph(self, col_headers, style, ax, show=True):
 		"""
-		plots columns of selected values as line plot and/or columns of values as scatter plot as specified by style, returns the axis plot
+		plots columns of selected values as line plot and/or columns of values as scatter plot as specified by style to an Axes object
 
 		Parameters
 		col_headers : [str, str, ...]
 			a list containing column header names whose data are to be plotted
 		style : [str, str, ...]
 			a list of matplotlib built-in style strings to indicate whether to plot line or scatter and the colours corresponding to each value in col_headers (hence, must be same length)
-
-		Returns
 		ax : Axes
+			matplotlib axes object on which the plot will be drawn
 
 		Raises
 		AttributeError :
@@ -172,9 +169,8 @@ class StockData():
 			self.selected_data is empty, perhaps due to OOB or invalid range
 		"""
 		assert not self.selected_data.empty
-		ax = self.selected_data[col_headers].plot(style=style, linewidth=1)
+		self.selected_data[col_headers].plot(style=style, ax=ax, linewidth=1)
 		if show: plt.show()
-		return ax
 
 	def calculate_SMA(self, n):
 		"""
@@ -281,7 +277,8 @@ if __name__ == "__main__":
 
 	selected = new.get_data(start, end)
 	print(selected)
-	ax = new.plot_graph(['Close', 'SMA15', 'SMA50','Sell','Buy'], ['k-','b-','c-','ro','yo'], False)
+	fig, ax = plt.subplots()
+	new.plot_graph(['Close', 'SMA15', 'SMA50','Sell','Buy'], ['k-','b-','c-','ro','yo'], ax=ax, show=False)
 	plt.tight_layout()
 	plt.grid()
 	plt.show()

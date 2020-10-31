@@ -97,18 +97,51 @@ class StockData():
 		n : int
 			the amount of stock data to use to calculate average
 		col : str ('Close')
-			the column head name of the values to use to calculate average
+			the column head title of the values to use to calculate average
 
 		Returns
 		self : StockData
 		"""
 		sma = self.data[col].rolling(n).mean()
-		self.data[f'SMA{n}'] = sma
+		self.data[f'SMA{n}'] = np.round(sma, 4)
 		self.data.to_csv(self.filepath, index=True)
 		return self
 
-	def _calculate_crossover(self):
-		pass
+	def _calculate_crossover(self, SMA1, SMA2, col='Close'):
+		"""
+		calculates the crossover positions and values, augments the stock dataframe with 2 new columns 'Sell' and 'Buy' containing the value at which SMA crossover happens
+
+		Parameters
+		SMA1 : str
+			the first column head title containing the SMA values
+		SMA2 : str
+			the second column head title containing the SMA values
+		col : str ('Close')
+			the column head title whose values will copied into 'Buy' and 'Sell' column to indicate crossovers had happen on that index
+
+		Returns
+		self : StockData
+
+		Raises
+		ValueError :
+			SMA1 and SMA2 str is the same, they must be different
+		"""
+
+		if SMA1 < SMA2: signal = self.data[SMA1] - self.data[SMA2]
+		elif SMA1 > SMA2: signal = self.data[SMA2] - self.data[SMA1]
+		else: raise ValueError(f"{SMA1} & {SMA2} provided are the same. Must be different SMA.")
+
+		signal[signal > 0] = 1
+		signal[signal <= 0] = 0
+		diff = signal.diff()
+
+		self.data['Sell'] = np.nan
+		self.data['Buy'] = np.nan
+		self.data.loc[diff.index[diff < 0], 'Sell'] = self.data.loc[diff.index[diff < 0], col]
+		self.data.loc[diff.index[diff > 0], 'Buy'] = self.data.loc[diff.index[diff > 0], col]
+
+		self.data.to_csv(self.filepath, index=True)
+		return self
 
 	def calculate_SMA(self, n):
 		"""
@@ -205,6 +238,7 @@ if __name__ == "__main__":
 	print(new.get_period())
 	new._calculate_SMA(15)
 	new._calculate_SMA(50)
+	new._calculate_crossover('SMA15', 'SMA50')
 	# new.calculate_SMA(15)
 	# new.calculate_SMA(50)
 	# new.calculate_SMA(50) # should not run again because data alr exists

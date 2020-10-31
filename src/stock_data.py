@@ -10,9 +10,11 @@ class StockData():
 	.filepath : str
 		filepath to the source stock data .csv file used to initialize StockData
 	.data : DataFrame
-		dataframe containing the stock data, indexed by datetime objects
+		dataframe containing the stock data, indexed by datetime string of format YYYY=MM-DD
+	.selected_data : DataFrame
+		dataframe ontaining the selected stock data, indexed by datetime string of format YYYY=MM-DD
 
-	Methods
+	Methodscolumn_headers
 	"""
 	def __init__(self, filepath):
 		"""
@@ -107,9 +109,11 @@ class StockData():
 		Returns
 		self : StockData
 		"""
-		sma = self.data[col].rolling(n).mean()
-		self.data[f'SMA{n}'] = np.round(sma, 4)
-		self.data.to_csv(self.filepath, index=True)
+		col_head = f'SMA{n}'
+		if col_head not in self.data.columns:
+			sma = self.data[col].rolling(n).mean()
+			self.data[f'SMA{n}'] = np.round(sma, 4)
+			self.data.to_csv(self.filepath, index=True)
 		return self
 
 	def _calculate_crossover(self, SMA1, SMA2, col='Close'):
@@ -150,7 +154,7 @@ class StockData():
 
 	def plot_graph(self, col_headers, style, show=True):
 		"""
-		plots columns of values as line plot and/or columns of values as scatter plot as specified by style, returns the axis plot
+		plots columns of selected values as line plot and/or columns of values as scatter plot as specified by style, returns the axis plot
 
 		Parameters
 		col_headers : [str, str, ...]
@@ -160,8 +164,15 @@ class StockData():
 
 		Returns
 		ax : Axes
+
+		Raises
+		AttributeError :
+			self.selected_data has not been specified, call StockData.get_data(start, end) before plotting
+		AssertionError :
+			self.selected_data is empty, perhaps due to OOB or invalid range
 		"""
-		ax = self.data[col_headers].plot(style=style,linewidth=1)
+		assert not self.selected_data.empty
+		ax = self.selected_data[col_headers].plot(style=style, linewidth=1)
 		if show: plt.show()
 		return ax
 
@@ -256,18 +267,21 @@ if __name__ == "__main__":
 
 	old = StockData("../data/C31.SI.csv")
 	new = StockData("../data/GOOG.csv")
-	print(new.data)
-	print(new.get_period())
+
 	new._calculate_SMA(15)
 	new._calculate_SMA(50)
 	new._calculate_crossover('SMA15', 'SMA50', 'SMA15')
+	start, end = new.get_period()
+	print(f'{start} to {end}')
 
 	# new.calculate_SMA(15)
 	# new.calculate_SMA(50)
 	# new.calculate_SMA(50) # should not run again because data alr exists
 	# new.calculate_crossover('SMA15', 'SMA50')
 
-	selected = new.get_data('2020-02-01', '2020-09-21')
+	selected = new.get_data(start, end)
 	print(selected)
 	ax = new.plot_graph(['Close', 'SMA15', 'SMA50','Sell','Buy'], ['k-','b-','c-','ro','yo'], False)
+	plt.tight_layout()
+	plt.grid()
 	plt.show()

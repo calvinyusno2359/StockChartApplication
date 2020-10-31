@@ -21,6 +21,7 @@ class Main(qtw.QWidget, Ui_Form):
 
 		# sets up a new figure to plot on, then instantiates a canvas and toolbar object
 		self.figure = plt.figure()
+		self.ax = self.figure.add_subplot(111)
 		self.canvas = FigureCanvas(self.figure)
 		self.toolbar = NavigationToolbar(self.canvas, self)
 
@@ -30,7 +31,7 @@ class Main(qtw.QWidget, Ui_Form):
 
 		# button connections
 		self.loadCSVButton.clicked.connect(self.load_data)
-		self.updateWindowButton.clicked.connect(self.update_graphics)
+		self.updateWindowButton.clicked.connect(self.update_canvas)
 
 		self.scrollwidget = qtw.QWidget()
 		self.scrollLayout = qtw.QVBoxLayout()
@@ -70,6 +71,29 @@ class Main(qtw.QWidget, Ui_Form):
 		except:
 			self.report("Filepath provided is invalid.")
 
+	def update_canvas(self):
+		self.date_format = '%Y-%m-%d'
+
+		try:
+			start_date = str(datetime.strptime(self.startDateEdit.text(), self.date_format).date())
+			end_date = str(datetime.strptime(self.endDateEdit.text(), self.date_format).date())
+			period = f"{start_date} to {end_date}"
+			self.periodEdit.setText(period)
+
+			self.selected_stock_data = self.stock_data.get_data(start_date, end_date)
+			print(self.selected_stock_data)
+
+			column_headers = ['Close', 'SMA15', 'SMA50','Sell','Buy']
+			style = ['k-','b-','c-','ro','yo']
+			self.stock_data.plot_graph(column_headers, style, show=False)
+			# plt.plot(self.selected_stock_data.index, self.selected_stock_data[column_headers], style=style)
+			self.figure.legend()
+			self.figure.tight_layout()
+			self.canvas.draw()
+
+		except ValueError as e:
+			self.report(f"Time period has not been specified or does not match YYYY-MM-DD format, {e}.")
+
 	def update_graphics(self):
 		"""
 		Given inputted date string of format YYYY-MM-DD, creates a date object from it.
@@ -82,10 +106,8 @@ class Main(qtw.QWidget, Ui_Form):
 		self.date_format = '%Y-%m-%d'
 
 		try:
-			# start_date = datetime.strptime(self.startDateEdit.text(), self.date_format).date()
-			# end_date = datetime.strptime(self.endDateEdit.text(), self.date_format).date()
-			start_date = self.startDateEdit.text()
-			end_date = self.endDateEdit.text()
+			start_date = str(datetime.strptime(self.startDateEdit.text(), self.date_format).date())
+			end_date = str(datetime.strptime(self.endDateEdit.text(), self.date_format).date())
 			period = f"{start_date} to {end_date}"
 			self.periodEdit.setText(period)
 
@@ -108,6 +130,9 @@ class Main(qtw.QWidget, Ui_Form):
 				print(self.selected_stock_data)
 				self.plot_graph(column_headers)
 				self.plot_signals()
+
+			except KeyError as e:
+				self.report(f"Selected date does not exist, {e}")
 
 			except AssertionError as e:
 				self.report(f"Selected range is empty, {e}.")

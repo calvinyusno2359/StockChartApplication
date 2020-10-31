@@ -280,5 +280,4 @@ if __name__ == "__main__":
 	fig, ax = plt.subplots()
 	new.plot_graph(['Close', 'SMA15', 'SMA50','Sell','Buy'], ['k-','b-','c-','ro','yo'], ax=ax, show=False)
 	plt.tight_layout()
-	plt.grid()
 	plt.show()

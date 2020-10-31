@@ -1,10 +1,8 @@
 import sys, os
 from pathlib import Path
 from datetime import datetime
-from functools import partial
 
 import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 
@@ -41,7 +39,7 @@ class Main(qtw.QWidget, Ui_Form):
 		self.scrollArea.setWidget(self.scrollwidget)
 
 		# auto-complete feauture
-		self.filePathEdit.setText("../data/GOOG.csv")
+		self.filePathEdit.setText("./data/GOOG.csv")
 
 	def load_data(self):
 		"""

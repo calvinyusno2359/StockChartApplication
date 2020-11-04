@@ -1,20 +1,158 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 class StockData():
+	"""
+	handles and operates on yahoo stock data (.csv)
+	Attributes
+	.filepath : str
+		filepath to the source stock data .csv file used to initialize StockData
+	.data : DataFrame
+		dataframe containing the stock data, indexed by datetime string of format YYYY=MM-DD
+	.selected_data : DataFrame
+		dataframe ontaining the selected stock data, indexed by datetime string of format YYYY=MM-DD
+	Methods
+	__init__
+	check_data
+	get_data
+	get_period
+	calculate_SMA
+	calculate_crossover
+	plot_graph
+	"""
 	def __init__(self, filepath):
+		"""
+		initializes StockData object by parsing stock data .csv file into a dataframe (assumes 'Date' column exists and uses it for index), also checks and handles missing data
+		Parameters
+		filepath : str
+			filepath to the stock data .csv file, can be relative or absolute
+		Raises
+		IOError :
+			failed I/O operation, e.g: invalid filepath, fail to open .csv
+		"""
 		self.filepath = filepath
-		self.data = self.read_csv(filepath).set_index('Date')
+		self.data = pd.read_csv(filepath).set_index('Date')
 		self.check_data()
 
-	def read_csv(self, filepath):
+	def check_data(self, overwrite=True):
 		"""
-		Given inputted csv filepath (str), parses csv into a dataframe and returns it
-		Error handling:
-		- Invalid filepath: raises exception
+		checks and handles missing data by filling in missing values by interpolation
+		Parameters
+		overwrite : bool (True)
+			if True, overwrites original source stock data .csv file
+		Returns
+		self : StockData
 		"""
-		try: return pd.read_csv(filepath)
-		except IOError as e: raise Exception(e)
+		# function to fill in missing values with average with the one previous and after data (interpolation)
+		self.data = self.data.interpolate()
+		self.data.to_csv(self.filepath, index=overwrite)
+		return self
+
+	def get_data(self, start_date, end_date):
+		"""
+		returns a subset of the stock data ranging from start_date to end_date inclusive
+		Parameters
+		start_date : str
+			start date of stock data range, must be of format YYYY-MM-DD
+		end_date : str
+			end date of stokc data range, must be of format YYYY-MM-DD
+		Returns:
+		selected_data : DataFrame
+			stock data dataframe indexed from specified start to end date inclusive
+		Raises
+		KeyError :
+			data for this date does not exist
+		"""
+		self.selected_data = self.data[str(start_date):str(end_date)]
+		return self.selected_data
+
+	def get_period(self):
+		"""
+		returns a string tuple of the first and last index which make up the maximum period of StockData
+		Returns
+		period : (str, str)
+		Raises
+		TypeError :
+			the return tuple is probably (nan, nan) because .csv is empty
+		"""
+		index = list(self.data.index)
+		(first, last) = (index[0], index[-1])
+		return (first, last)
+
+	def _calculate_SMA(self, n, col='Close'):
+		"""
+		calculates simple moving average (SMA) and augments the stock dataframe with this SMA(n) data as a new column
+		Parameters
+		n : int
+			the amount of stock data to use to calculate average
+		col : str ('Close')
+			the column head title of the values to use to calculate average
+		Returns
+		self : StockData
+		"""
+		col_head = f'SMA{n}'
+		if col_head not in self.data.columns:
+			sma = self.data[col].rolling(n).mean()
+			self.data[f'SMA{n}'] = np.round(sma, 4)
+			self.data.to_csv(self.filepath, index=True)
+		return self
+
+	def _calculate_crossover(self, SMA1, SMA2, col='Close'):
+		"""
+		calculates the crossover positions and values, augments the stock dataframe with 2 new columns 'Sell' and 'Buy' containing the value at which SMA crossover happens
+		Parameters
+		SMA1 : str
+			the first column head title containing the SMA values
+		SMA2 : str
+			the second column head title containing the SMA values
+		col : str ('Close')
+			the column head title whose values will copied into 'Buy' and 'Sell' column to indicate crossovers had happen on that index
+		Returns
+		self : StockData
+		Raises
+		Exception :
+			SMA1 and SMA2 provided are the same, they must be different
+		"""
+		if SMA1 < SMA2: signal = self.data[SMA1] - self.data[SMA2]
+		elif SMA1 > SMA2: signal = self.data[SMA2] - self.data[SMA1]
+		else: raise Exception(f"{SMA1} & {SMA2} provided are the same. They must be different SMA.")
+
+		signal[signal > 0] = 1
+		signal[signal <= 0] = 0
+		diff = signal.diff()
+
+		self.data['Sell'] = np.nan
+		self.data['Buy'] = np.nan
+		self.data.loc[diff.index[diff < 0], 'Sell'] = self.data.loc[diff.index[diff < 0], col]
+		self.data.loc[diff.index[diff > 0], 'Buy'] = self.data.loc[diff.index[diff > 0], col]
+
+		self.data.to_csv(self.filepath, index=True)
+		return self
+
+	def plot_graph(self, col_headers, style, ax, show=True):
+		"""
+		plots columns of selected values as line plot and/or columns of values as scatter plot as specified by style to an Axes object
+		Parameters
+		col_headers : [str, str, ...]
+			a list containing column header names whose data are to be plotted
+		style : [str, str, ...]
+			a list of matplotlib built-in style strings to indicate whether to plot line or scatter and the colours corresponding to each value in col_headers (hence, must be same length)
+		ax : Axes
+			matplotlib axes object on which the plot will be drawn
+		Raises
+		AttributeError :
+			self.selected_data has not been specified, call StockData.get_data(start, end) before plotting
+		AssertionError :
+			self.selected_data is empty, perhaps due to OOB or invalid range
+		"""
+		assert not self.selected_data.empty
+		self.selected_data[col_headers].plot(style=style,
+		                                     ax=ax,
+		                                     grid=True,
+		                                     x_compat=True,
+		                                     linewidth=1)
+		if show: plt.show()
 
 	def calculate_SMA(self, n):
 		"""
@@ -43,25 +181,6 @@ class StockData():
 			print(self.data)
 			self.data.to_csv(self.filepath, index=True)
 
-		return self
-
-	def get_data(self, start_date, end_date):
-		"""
-		Given start_date and end_date objects, return the corresponding slice of self.data
-
-		Error handling:
-		- end_date < start_date: selects none
-		- date out of bounds on either side: selects up to max available data on the side that is oob
-		"""
-		self.selected_data = self.data[str(start_date):str(end_date)]
-		return self.selected_data
-
-	def check_data(self):
-		self.data.reset_index()
-		# function to fill in naan with average with the one previous and after data
-		self.data = self.data.interpolate()
-		# overwrite old csv with new clean data csv
-		self.data.to_csv(self.filepath, index=True)
 		return self
 
 	def calculate_crossover(self, SMAa, SMAb):
@@ -118,14 +237,6 @@ class StockData():
 		self.data.to_csv(self.filepath, index=True)
 		return self
 
-	def get_period(self):
-		"""
-		Returns first and last index which make up the maximum period of stock data
-		"""
-		index = list(self.data.index)
-		(first, last) = (index[0], index[-1])
-		return (first, last)
-
 if __name__ == "__main__":
 	# How working data looks like
 	# raw = StockData("../data/GOOG2.csv")
@@ -134,10 +245,21 @@ if __name__ == "__main__":
 
 	old = StockData("../data/C31.SI.csv")
 	new = StockData("../data/GOOG.csv")
-	print(new.data)
-	new.calculate_SMA(15)
-	new.calculate_SMA(50)
-	new.calculate_SMA(50) # should not run again because data alr exists
-	new.calculate_crossover('SMA15', 'SMA50')
-	selected = new.get_data('2020-01-02', '2020-09-22')
+
+	new._calculate_SMA(15)
+	new._calculate_SMA(50)
+	new._calculate_crossover('SMA15', 'SMA50', 'SMA15')
+	start, end = new.get_period()
+	print(f'{start} to {end}')
+
+	# new.calculate_SMA(15)
+	# new.calculate_SMA(50)
+	# new.calculate_SMA(50) # should not run again because data alr exists
+	# new.calculate_crossover('SMA15', 'SMA50')
+
+	selected = new.get_data(start, end)
 	print(selected)
+	fig, ax = plt.subplots()
+	new.plot_graph(['Close', 'SMA15', 'SMA50','Sell','Buy'], ['k-','b-','c-','ro','yo'], ax=ax, show=False)
+	plt.tight_layout()
+	plt.show()

@@ -28,14 +28,19 @@ class Main(qtw.QWidget, Ui_Form):
 		self.canvasLayout.addWidget(self.toolbar)
 		self.canvasLayout.addWidget(self.canvas)
 
-		# button connections
+		# button & checkbox connections
 		self.loadCSVButton.clicked.connect(self.load_data)
 		self.updateWindowButton.clicked.connect(self.update_graphics)
+		self.SMA1Checkbox.stateChanged.connect(self.update_graphics)
+		self.SMA2Checkbox.stateChanged.connect(self.update_graphics)
 
 		self.scrollwidget = qtw.QWidget()
 		self.scrollLayout = qtw.QVBoxLayout()
 		self.scrollwidget.setLayout(self.scrollLayout)
 		self.scrollArea.setWidget(self.scrollwidget)
+
+		# auto-complete feauture
+		self.filePathEdit.setText("../data/GOOG.csv")
 
 	def load_data(self):
 		"""
@@ -58,14 +63,18 @@ class Main(qtw.QWidget, Ui_Form):
 			self.periodEdit.setText(period)
 			self.SMA1Edit.setText("15")
 			self.SMA2Edit.setText("50")
-			self.SMA1Checkbox.setChecked()
-			self.SMA2Checkbox.setChecked()
+			self.SMA1Checkbox.setChecked(True)
+			self.SMA2Checkbox.setChecked(True)
 
 			self.report(f"Data loaded from {filepath}; period auto-selected: {start_date} to {end_date}.")
 			print(self.stock_data.data)
 
-		except:
-			self.report("Filepath provided is invalid.")
+		except IOError as e:
+			self.report(f"Filepath provided is invalid or fail to open .csv file. {e}")
+
+		except TypeError as e:
+			self.report(f"The return tuple is probably (nan, nan) because .csv is empty")
+
 
 	def update_graphics(self):
 		"""
@@ -88,16 +97,16 @@ class Main(qtw.QWidget, Ui_Form):
 			column_headers = ['Close']
 			if self.SMA1Checkbox.isChecked():
 				column_headers.append("SMA" + self.SMA1Edit.text())
-				self.stock_data.calculate_SMA(int(self.SMA1Edit.text()))
+				self.stock_data._calculate_SMA(int(self.SMA1Edit.text()))
 			if self.SMA2Checkbox.isChecked():
 				column_headers.append("SMA" + self.SMA2Edit.text())
-				self.stock_data.calculate_SMA(int(self.SMA2Edit.text()))
+				self.stock_data._calculate_SMA(int(self.SMA2Edit.text()))
 
 			self.report(f"Time period specified as: {period}. Plotting...")
 
 			try:
 				if len(column_headers) == 3:
-					self.stock_data.calculate_crossover(column_headers[1], column_headers[2])
+					self.stock_data._calculate_crossover(column_headers[1], column_headers[2], column_headers[1])
 
 				self.selected_stock_data = self.stock_data.get_data(start_date, end_date)
 				print(self.selected_stock_data)
@@ -132,9 +141,9 @@ class Main(qtw.QWidget, Ui_Form):
 
 		idx = 0
 		colors = ['black', 'blue', 'orange']
+		ax = self.figure.add_subplot(111)
 		for column_head in column_headers:
 			if column_head in self.selected_stock_data.columns:
-				ax = self.figure.add_subplot(111)
 				y_data = list(self.selected_stock_data[column_head])
 				ax.plot(x_data, y_data, label=column_head, color=colors[idx])
 				self.report(f"{column_head} data is being plotted.")

@@ -116,7 +116,8 @@ class StockData():
 		SMA2 : str
 			the second column head title containing the SMA values
 		col : str ('Close')
-			the column head title whose values will copied into 'Buy' and 'Sell' column to indicate crossovers had happen on that index
+			the column head title whose values will copied into 'Buy' and 'Sell' columns
+			to indicate crossovers had happen on that index
 
 		Returns
 		self : StockData
@@ -217,7 +218,8 @@ class StockData():
 		SMA2 : str
 			the second column head title containing the SMA values
 		col : str ('Close')
-			the column head title whose values will copied into 'Buy' and 'Sell' column to indicate crossovers had happen on that index
+			the column head title whose values will copied into 'Buy' and 'Sell' columns
+			to indicate crossovers had happen on that index
 
 		Returns
 		self : StockData

@@ -13,19 +13,11 @@ class StockData():
 		dataframe containing the stock data, indexed by datetime string of format YYYY=MM-DD
 	.selected_data : DataFrame
 		dataframe ontaining the selected stock data, indexed by datetime string of format YYYY=MM-DD
-
-	Methods
-	__init__
-	check_data
-	get_data
-	get_period
-	calculate_SMA
-	calculate_crossover
-	plot_graph
 	"""
 	def __init__(self, filepath):
 		"""
-		initializes StockData object by parsing stock data .csv file into a dataframe (assumes 'Date' column exists and uses it for index), also checks and handles missing data
+		initializes StockData object by parsing stock data .csv file into a dataframe
+		(assumes 'Date' column exists and uses it for index), also checks and handles missing data
 
 		Parameters
 		filepath : str
@@ -115,7 +107,8 @@ class StockData():
 
 	def _calculate_crossover(self, SMA1, SMA2, col='Close'):
 		"""
-		calculates the crossover positions and values, augments the stock dataframe with 2 new columns 'Sell' and 'Buy' containing the value at which SMA crossover happens
+		calculates the crossover positions and values, augments the stock dataframe with 2 new columns
+		'Sell' and 'Buy' containing the value at which SMA crossover happens
 
 		Parameters
 		SMA1 : str
@@ -150,13 +143,15 @@ class StockData():
 
 	def plot_graph(self, col_headers, style, ax, show=True):
 		"""
-		plots columns of selected values as line plot and/or columns of values as scatter plot as specified by style to an Axes object
+		plots columns of selected values as line plot and/or columns of values as scatter plot
+		as specified by style to an Axes object
 
 		Parameters
 		col_headers : [str, str, ...]
 			a list containing column header names whose data are to be plotted
 		style : [str, str, ...]
-			a list of matplotlib built-in style strings to indicate whether to plot line or scatter and the colours corresponding to each value in col_headers (hence, must be same length)
+			a list of matplotlib built-in style strings to indicate whether to plot line or scatterplot
+			and the colours corresponding to each value in col_headers (hence, must be same length)
 		ax : Axes
 			matplotlib axes object on which the plot will be drawn
 
@@ -213,7 +208,8 @@ class StockData():
 
 	def calculate_crossover(self, SMAa, SMAb):
 		"""
-		calculates the crossover positions and values, augments the stock dataframe with 2 new columns 'Sell' and 'Buy' containing the value at which SMA crossover happens
+		calculates the crossover positions and values, augments the stock dataframe with 2 new columns
+		'Sell' and 'Buy' containing the value at which SMA crossover happens
 
 		Parameters
 		SMA1 : str

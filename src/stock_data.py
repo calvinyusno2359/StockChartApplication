@@ -280,7 +280,6 @@ class StockData():
 		self.data.to_csv(self.filepath, index=True)
 		return self
 
-
 if __name__ == "__main__":
 	# How working data looks like
 	# raw = StockData("../data/GOOG2.csv")

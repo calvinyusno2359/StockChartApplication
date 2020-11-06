@@ -58,6 +58,7 @@ class Main(qtw.QWidget, Ui_Form):
 			# auto-complete feauture
 			start_date, end_date = self.stock_data.get_period()
 			period = f"{start_date} to {end_date}"
+			print(start_date, end_date)
 			self.startDateEdit.setText(start_date)
 			self.endDateEdit.setText(end_date)
 			self.periodEdit.setText(period)
@@ -84,6 +85,7 @@ class Main(qtw.QWidget, Ui_Form):
 		- Invalid date format: prompts user
 		- Non-existent stock_data: prompts user
 		"""
+		self.ax.clear()
 		self.date_format = '%Y-%m-%d'
 
 		try:

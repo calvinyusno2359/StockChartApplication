@@ -140,11 +140,10 @@ class Main(qtw.QWidget, Ui_Form):
 		                              ))
 
 		colors = ['black', 'blue', 'orange', 'red', 'green']
-		# ax = self.figure.add_subplot(111)
 		for i in range(len(column_headers)):
 			if column_headers[i] in self.selected_stock_data.columns:
 				y_data = list(self.selected_stock_data[column_headers[i]])
-				self.ax.plot(x_data, y_data, formats[i], label=column_headers[i], color=colors[i]) # , color=colors[idx])
+				self.ax.plot(x_data, y_data, formats[i], label=column_headers[i], color=colors[i])
 				self.report(f"{column_headers[i]} data is being plotted.")
 			else: self.report(f"{column_headers[i]} data does not exist.")
 

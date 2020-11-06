@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 class StockData():
 	"""
 	handles and operates on yahoo stock data (.csv)
+
 	Attributes
 	.filepath : str
 		filepath to the source stock data .csv file used to initialize StockData
@@ -12,6 +13,7 @@ class StockData():
 		dataframe containing the stock data, indexed by datetime string of format YYYY=MM-DD
 	.selected_data : DataFrame
 		dataframe ontaining the selected stock data, indexed by datetime string of format YYYY=MM-DD
+
 	Methods
 	__init__
 	check_data
@@ -24,9 +26,11 @@ class StockData():
 	def __init__(self, filepath):
 		"""
 		initializes StockData object by parsing stock data .csv file into a dataframe (assumes 'Date' column exists and uses it for index), also checks and handles missing data
+
 		Parameters
 		filepath : str
 			filepath to the stock data .csv file, can be relative or absolute
+
 		Raises
 		IOError :
 			failed I/O operation, e.g: invalid filepath, fail to open .csv
@@ -38,13 +42,15 @@ class StockData():
 	def check_data(self, overwrite=True):
 		"""
 		checks and handles missing data by filling in missing values by interpolation
+
 		Parameters
 		overwrite : bool (True)
 			if True, overwrites original source stock data .csv file
+
 		Returns
 		self : StockData
 		"""
-		# function to fill in missing values with average with the one previous and after data (interpolation)
+		# function to fill in missing values with average with previous data and after (interpolation)
 		self.data = self.data.interpolate()
 		self.data.to_csv(self.filepath, index=overwrite)
 		return self
@@ -52,17 +58,22 @@ class StockData():
 	def get_data(self, start_date, end_date):
 		"""
 		returns a subset of the stock data ranging from start_date to end_date inclusive
+
 		Parameters
 		start_date : str
 			start date of stock data range, must be of format YYYY-MM-DD
 		end_date : str
 			end date of stokc data range, must be of format YYYY-MM-DD
+
 		Returns:
 		selected_data : DataFrame
 			stock data dataframe indexed from specified start to end date inclusive
+
 		Raises
 		KeyError :
 			data for this date does not exist
+		AssertionError :
+			selected range is empty
 		"""
 		self.selected_data = self.data[str(start_date):str(end_date)]
 		return self.selected_data
@@ -70,8 +81,10 @@ class StockData():
 	def get_period(self):
 		"""
 		returns a string tuple of the first and last index which make up the maximum period of StockData
+
 		Returns
 		period : (str, str)
+
 		Raises
 		TypeError :
 			the return tuple is probably (nan, nan) because .csv is empty
@@ -83,11 +96,13 @@ class StockData():
 	def _calculate_SMA(self, n, col='Close'):
 		"""
 		calculates simple moving average (SMA) and augments the stock dataframe with this SMA(n) data as a new column
+
 		Parameters
 		n : int
 			the amount of stock data to use to calculate average
 		col : str ('Close')
 			the column head title of the values to use to calculate average
+
 		Returns
 		self : StockData
 		"""
@@ -101,6 +116,7 @@ class StockData():
 	def _calculate_crossover(self, SMA1, SMA2, col='Close'):
 		"""
 		calculates the crossover positions and values, augments the stock dataframe with 2 new columns 'Sell' and 'Buy' containing the value at which SMA crossover happens
+
 		Parameters
 		SMA1 : str
 			the first column head title containing the SMA values
@@ -108,8 +124,10 @@ class StockData():
 			the second column head title containing the SMA values
 		col : str ('Close')
 			the column head title whose values will copied into 'Buy' and 'Sell' column to indicate crossovers had happen on that index
+
 		Returns
 		self : StockData
+
 		Raises
 		Exception :
 			SMA1 and SMA2 provided are the same, they must be different
@@ -133,6 +151,7 @@ class StockData():
 	def plot_graph(self, col_headers, style, ax, show=True):
 		"""
 		plots columns of selected values as line plot and/or columns of values as scatter plot as specified by style to an Axes object
+
 		Parameters
 		col_headers : [str, str, ...]
 			a list containing column header names whose data are to be plotted
@@ -140,6 +159,7 @@ class StockData():
 			a list of matplotlib built-in style strings to indicate whether to plot line or scatter and the colours corresponding to each value in col_headers (hence, must be same length)
 		ax : Axes
 			matplotlib axes object on which the plot will be drawn
+
 		Raises
 		AttributeError :
 			self.selected_data has not been specified, call StockData.get_data(start, end) before plotting
@@ -156,8 +176,16 @@ class StockData():
 
 	def calculate_SMA(self, n):
 		"""
-		Given self.data and N, find the SMA(N) and augments self.data with the SMA data as new column
-		if SMA data already exists, do nothing
+		calculates simple moving average (SMA) and augments the stock dataframe with this SMA(n) data as a new column
+
+		Parameters
+		n : int
+			the amount of stock data to use to calculate average
+		col : str ('Close')
+			the column head title of the values to use to calculate average
+
+		Returns
+		self : StockData
 		"""
 		col_head = 'SMA' + str(n)
 		df = self.data.reset_index()
@@ -184,7 +212,24 @@ class StockData():
 		return self
 
 	def calculate_crossover(self, SMAa, SMAb):
+		"""
+		calculates the crossover positions and values, augments the stock dataframe with 2 new columns 'Sell' and 'Buy' containing the value at which SMA crossover happens
 
+		Parameters
+		SMA1 : str
+			the first column head title containing the SMA values
+		SMA2 : str
+			the second column head title containing the SMA values
+		col : str ('Close')
+			the column head title whose values will copied into 'Buy' and 'Sell' column to indicate crossovers had happen on that index
+
+		Returns
+		self : StockData
+
+		Raises
+		Exception :
+			SMA1 and SMA2 provided are the same, they must be different
+		"""
 		col_head1 = 'Position'
 		col_head2 = 'Signal'
 		col_head3 = 'Buy'
@@ -228,14 +273,13 @@ class StockData():
 				sellSignal.append(value) # adds '-1' at the location of sell signals in a separate column
 			else: sellSignal.append(np.nan) # if no signal leave blank
 
-		# self.data[col_head1] = stockPosition
-		# self.data[col_head2] = stockSignal
 		self.data[col_head3] = buySignal
 		self.data[col_head4] = sellSignal
 
 		print(self.data)
 		self.data.to_csv(self.filepath, index=True)
 		return self
+
 
 if __name__ == "__main__":
 	# How working data looks like

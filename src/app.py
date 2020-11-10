@@ -14,7 +14,51 @@ from main_window import Ui_Form
 from stock_data import StockData
 
 class Main(qtw.QWidget, Ui_Form):
+	"""
+	handles user interaction, loads data and updates GUI
+
+	Attributes
+	.figure : Figure
+		matplotlib Figure object to contain the Axes object(s) and the FigureCanvas object
+	.ax : Axes
+		matplotlib Axes object is the 'plot' itself, the region of the image which contains the data
+	.canvas : FigureCanvas
+		matplotlib FigureCanvas is the area onto which the figure is drawn
+	.toolbar : NavigationToolbar
+		matplotlib NavigationToolbar is the UI that users can use to interact with the drawn plot
+	.canvasLayout : QVBoxLayout
+		PyQt5's object used to demark the location and contain the FigureCanvas and NavigationToolbar
+	.loadCSVButton : QPushButton
+		PyQt5's object that user can push to activate the load_data() function
+	.updateWindowButton : QPushButton
+		PyQt5's object that user can push to activate the update_canvas() function
+	.SMA1Checkbox : QCheckBox
+		PyQt5's object that user can tick to specify whether to include SMA1 plot in the canvas
+	.SMA2Checkbox : QCheckBox
+		PyQt5's object that user can tick to specify whether to include SMA2 plot in the canvas
+	.scrollWidget : QWidget
+		PyQt5's base object for that receives user inputs, as such it is interactable on the screen
+	.scrollLayout : QVBoxLayout
+		PyQt5's object used to demark the location and contain the QScrollArea
+	.scrollArea : QScrollArea
+		PyQt5's object's scrollable area on which status reports of the GUI actions are written
+	.filePathEdit : QLineEdit
+		PyQt5's object used to create a box into which user can input filepath (e.g. ../data/GOOG.csv)
+	.startDateEdit : QLineEdit
+		PyQt5's object used to create a box into which user can input start date (YYYY-MM-DD)
+	.endDateEdit : QLineEdit
+		PyQt5's object used to create a box into which user can input end date (YYYY-MM-DD)
+	.SMA1Edit : QLineEdit
+		PyQt5's object used to create a box into which user can input SMA1 window value (e.g. 15)
+	.SMA2Edit : QLineEdit
+		PyQt5's object used to create a box into which user can input SMA2 window value (e.g. 50)
+	.periodEdit : QLineEdit
+		PyQt5's object used to create a box which user can use to see the period used for the graph
+	"""
 	def __init__(self):
+		"""
+		initializes and sets up GUI widgets and its connections
+		"""
 		super().__init__()
 		self.setupUi(self)
 		self.setWindowTitle("Stock Chart & Moving Average Application")
@@ -24,9 +68,15 @@ class Main(qtw.QWidget, Ui_Form):
 		self.canvas = FigureCanvas(self.figure)
 		self.toolbar = NavigationToolbar(self.canvas, self)
 
-		# attaches the toolbar and canvas
+		# attaches the toolbar and canvas to the canvas layout
 		self.canvasLayout.addWidget(self.toolbar)
 		self.canvasLayout.addWidget(self.canvas)
+
+		# sets up a scroll area to display GUI statuses
+		self.scrollWidget = qtw.QWidget()
+		self.scrollLayout = qtw.QVBoxLayout()
+		self.scrollWidget.setLayout(self.scrollLayout)
+		self.scrollArea.setWidget(self.scrollWidget)
 
 		# button & checkbox connections
 		self.loadCSVButton.clicked.connect(self.load_data)
@@ -34,31 +84,28 @@ class Main(qtw.QWidget, Ui_Form):
 		self.SMA1Checkbox.stateChanged.connect(self.update_canvas)
 		self.SMA2Checkbox.stateChanged.connect(self.update_canvas)
 
-		self.scrollwidget = qtw.QWidget()
-		self.scrollLayout = qtw.QVBoxLayout()
-		self.scrollwidget.setLayout(self.scrollLayout)
-		self.scrollArea.setWidget(self.scrollwidget)
-
 		# auto-complete feauture
 		self.filePathEdit.setText("../data/GOOG.csv")
 
 	def load_data(self):
 		"""
-		Given inputted filepath (str), loads stock data from csv as object StockData.
-		Also autocompletes all inputs using information provided by the csv.
-		Error handling:
-		- Empty filepath: do nothing
-		- Invalid filepath: prompts user
+		loads stock data .csv from inputted filepath string on the GUI as StockData object,
+		also autocompletes all inputs using information provided by the csv.
+
+		Error handling
+			invalid filepath :
+				empty filepath or file could not be found or opened.
+			invalid .csv :
+				.csv file is empty, missing date column, etc.
 		"""
 		filepath = Path(self.filePathEdit.text())
 
 		try:
 			self.stock_data = StockData(filepath)
-
-			# auto-complete feauture
 			start_date, end_date = self.stock_data.get_period()
 			period = f"{start_date} to {end_date}"
-			print(start_date, end_date)
+
+			# auto-complete feauture
 			self.startDateEdit.setText(start_date)
 			self.endDateEdit.setText(end_date)
 			self.periodEdit.setText(period)
@@ -78,12 +125,20 @@ class Main(qtw.QWidget, Ui_Form):
 
 	def update_canvas(self):
 		"""
-		Given inputted date string of format YYYY-MM-DD, creates a date object from it.
-		Then, use it to slice a copy of loaded stock_data to be used to update graphics.
-		Checks checkboxes first to see if SMA1 and SMA2 lines need to be drawn.
-		Error handling:
-		- Invalid date format: prompts user
-		- Non-existent stock_data: prompts user
+		creates a datetime object from the inputted date string of format YYYY-MM-DD.
+		uses it to slice a copy of loaded stock_data to be used to update graphics.
+		checks checkboxes first to see if SMA1, SMA2, Buya and Sell plots need to be drawn.
+		finally, updates graphic accordingly
+
+		Error handling
+		invalid date format:
+			date format inside the .csv file is not of form YYYY-MM-DD
+		non-existent stock_data :
+			the selected range results in an empty dataframe or end date < start date
+		non-existent data point :
+			data of that date does not exist, or maybe because it is Out-Of-Bound
+		raised exceptions :
+			SMA1 and SMA2 values are the same, or other exceptions raised
 		"""
 		self.ax.clear()
 		self.date_format = '%Y-%m-%d'
@@ -114,7 +169,7 @@ class Main(qtw.QWidget, Ui_Form):
 				formats.append('g^')
 
 			self.selected_stock_data = self.stock_data.get_data(start_date, end_date)
-			self._plot_graph(column_headers, formats)
+			self.plot_graph(column_headers, formats)
 
 			self.report(f"Plotting {column_headers} data from period: {start_date} to {end_date}.")
 			print(self.selected_stock_data)
@@ -128,9 +183,24 @@ class Main(qtw.QWidget, Ui_Form):
 		except KeyError as e:
 			self.report(f"Data for this date does not exist: {e}")
 
-		except Exception as e: self.report(e)
+		except Exception as e:
+			self.report(f"Exception encountered: {e}")
 
-	def _plot_graph(self, column_headers, formats):
+	def plot_graph(self, column_headers, formats):
+		"""
+		plots graphs specified under columnd_headers using the formats specified
+
+		Parameters
+		column_headers : [str, str, ...]
+			a list containing column header names whose data are to be plotted
+		formats : [str, str, ...]
+			a list of matplotlib built-in style strings to indicate whether to plot line or scatterplot
+			and the colours corresponding to each value in col_headers (hence, must be same length)
+
+		Error handling
+		empty dataframe :
+			selected dataframe is empty
+		"""
 		self.ax.clear()
 		assert not self.selected_stock_data.empty
 
@@ -164,7 +234,11 @@ class Main(qtw.QWidget, Ui_Form):
 
 	def report(self, string):
 		"""
-		Given a report (string), update the scroll area with this report
+		given a report (string), update the scroll area with this report
+
+		Parameters
+		string : str
+			string of the report, usually the error message itself.
 		"""
 		report_text = qtw.QLabel(string)
 		self.scrollLayout.addWidget(report_text)
@@ -172,7 +246,7 @@ class Main(qtw.QWidget, Ui_Form):
 
 	def center(self):
 		"""
-		Centers the fixed main window size according to user screen size
+		centers the fixed main window size according to user screen size
 		"""
 		screen = qtw.QDesktopWidget().screenGeometry()
 		main_window = self.geometry()

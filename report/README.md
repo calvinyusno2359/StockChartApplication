@@ -39,8 +39,3 @@ nbmerge <file_1>.ipynb <file_2>.ipynb <file_3>.ipynb > <merged_doc_name>.ipynb
 
 ## Knowledge Points
 1. asdf
-
-asdfasdf
-> Learning Pt
-> asdfoj
-

@@ -19,11 +19,17 @@ nbmerge <file_1>.ipynb <file_2>.ipynb <file_3>.ipynb > <merged_doc_name>.ipynb
 
 ## Table of Contents
 1. User Manual
-  - Overview
+  1. Overview
 2. Python Basics
 3. Python Packages
 4. stock_data.py
 5. main_window.py
-5. app.py
+  1. Installing Qt Designer
+  2. Building `main_window.ui` Using `Qt Designer`
+      1. Defining the GUI
+      2. Defining the Widgets
+  3. Installing PyQt5
+  4. Compiling `main_window.ui`into `main_window.py`
+6. app.py
 
 ## Knowledge Points

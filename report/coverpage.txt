@@ -1,0 +1,3 @@
+title: Python Programming and Its Application in Stock Chart & Moving Average Crossover
+team number: ?
+team names: ...

@@ -30,4 +30,4 @@ pyinstaller .\src\app.py -F
 The `.exe` file can be found inside `dist` folder.
 
 ## Dev Process
-![Dev Process](../asset/img/dev-process-v0.5.png)
+![Dev Process](../asset/img/dev-process-v0.9.png)

@@ -258,7 +258,9 @@ class Main(qtw.QWidget, Ui_Form):
 		screen = qtw.QDesktopWidget().screenGeometry()
 		main_window = self.geometry()
 		x = (screen.width() - main_window.width()) / 2
-		y = (screen.height() - main_window.height()) / 2 - 50	# pulls the window up slightly (arbitrary)
+
+		# pulls the window up slightly (arbitrary)
+		y = (screen.height() - main_window.height()) / 2 - 50
 		self.setFixedSize(main_window.width(), main_window.height())
 		self.move(x, y)
 

@@ -7,7 +7,7 @@ pip install nbmerge
 ```
 To merge documents use the following commands on the current `report` directory (not root):
 ```
-nbmerge <file_1>.ipynb <file_2>.ipynb <file_3>.ipynb > <merged_doc_name>.ipynb
+nbmerge main_window.ipynb app.ipynb > QF205_Report.ipynb
 ```
 
 ## Converting IPython Notebook via LaTeX

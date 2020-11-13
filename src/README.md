@@ -23,7 +23,7 @@ pyuic5 -x -o .\src\main_window.py .\src\main_window.ui
 ```
 
 ## Compiling Application `.exe`
-To compile `.py` application into an executable, use the following command from root folder:
+To compile `.py` application into an executable, use the following command from `root` folder:
 ```
 pyinstaller .\src\app.py -F
 ```

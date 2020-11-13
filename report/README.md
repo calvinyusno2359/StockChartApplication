@@ -48,6 +48,9 @@ nbmerge main_window.ipynb app.ipynb appendix.ipynb > "Python Programming and Its
     1. Inheriting Widgets from `main_window.py`
     2. Defining & Adding Widgets programmatically
     3. Getting `Line Edit Widget` Value
-    4. Preventing Crashes with `try... except...`
-    5. Setting `Widget` Values Programmatically
+    4. Using `Path` from `pathlib` to parse `filepath`
+    5. Preventing Crashes with `try... except...`
+    6. Setting `Widget` Values Programmatically
+    x. Connecting `Widgets` to `Functions`
+    x.
 

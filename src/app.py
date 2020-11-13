@@ -145,7 +145,6 @@ class Main(qtw.QWidget, Ui_Form):
 			SMA1 and SMA2 values are the same,
 			or other exceptions raised
 		"""
-		self.ax.clear()
 		self.date_format = '%Y-%m-%d'
 
 		try:

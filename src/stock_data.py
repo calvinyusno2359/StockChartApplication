@@ -17,7 +17,8 @@ class StockData():
 	def __init__(self, filepath):
 		"""
 		initializes StockData object by parsing stock data .csv file into a dataframe
-		(assumes 'Date' column exists and uses it for index), also checks and handles missing data
+		(assumes 'Date' column exists and uses it for index),
+		also checks and handles missing data
 
 		Parameters
 		filepath : str
@@ -42,14 +43,15 @@ class StockData():
 		Returns
 		self : StockData
 		"""
-		# function to fill in missing values with average with previous data and after (interpolation)
+		# function to fill in missing values
+		# by averaging previous data and after (interpolation)
 		self.data = self.data.interpolate()
 		self.data.to_csv(self.filepath, index=overwrite)
 		return self
 
 	def get_data(self, start_date, end_date):
 		"""
-		returns a subset of the stock data ranging from start_date to end_date inclusive
+		returns a subset of the stock data from start_date to end_date inclusive
 
 		Parameters
 		start_date : str
@@ -72,7 +74,8 @@ class StockData():
 
 	def get_period(self):
 		"""
-		returns a string tuple of the first and last index which make up the maximum period of StockData
+		returns a string tuple of the first and last index
+		which make up the maximum period of StockData
 
 		Returns
 		period : (str, str)
@@ -87,7 +90,8 @@ class StockData():
 
 	def _calculate_SMA(self, n, col='Close'):
 		"""
-		calculates simple moving average (SMA) and augments the stock dataframe with this SMA(n) data as a new column
+		calculates simple moving average (SMA) and augments the stock dataframe
+		with this SMA(n) data as a new column
 
 		Parameters
 		n : int
@@ -107,7 +111,8 @@ class StockData():
 
 	def _calculate_crossover(self, SMA1, SMA2, col='Close'):
 		"""
-		calculates the crossover positions and values, augments the stock dataframe with 2 new columns
+		calculates the crossover positions and values,
+		augments the stock dataframe with 2 new columns
 		'Sell' and 'Buy' containing the value at which SMA crossover happens
 
 		Parameters
@@ -116,8 +121,8 @@ class StockData():
 		SMA2 : str
 			the second column head title containing the SMA values
 		col : str ('Close')
-			the column head title whose values will copied into 'Buy' and 'Sell' columns
-			to indicate crossovers had happen on that index
+			the column head title whose values will copied into 'Buy' and 'Sell'
+			columns to indicate crossovers had happen on that index
 
 		Returns
 		self : StockData
@@ -144,21 +149,23 @@ class StockData():
 
 	def plot_graph(self, col_headers, style, ax, show=True):
 		"""
-		plots columns of selected values as line plot and/or columns of values as scatter plot
-		as specified by style to an Axes object
+		plots columns of selected values as line plot and/or columns of values
+		as scatter plot as specified by style to an Axes object
 
 		Parameters
 		col_headers : [str, str, ...]
 			a list containing column header names whose data are to be plotted
 		style : [str, str, ...]
-			a list of matplotlib built-in style strings to indicate whether to plot line or scatterplot
-			and the colours corresponding to each value in col_headers (hence, must be same length)
+			a list of matplotlib built-in style strings to indicate whether to plot
+			line or scatterplot and the colours corresponding to each value in
+			col_headers (hence, must be same length)
 		ax : Axes
 			matplotlib axes object on which the plot will be drawn
 
 		Raises
 		AttributeError :
-			self.selected_data has not been specified, call StockData.get_data(start, end) before plotting
+			self.selected_data has not been specified,
+			call StockData.get_data(start, end) before plotting
 		AssertionError :
 			self.selected_data is empty, perhaps due to OOB or invalid range
 		"""
@@ -172,7 +179,8 @@ class StockData():
 
 	def calculate_SMA(self, n):
 		"""
-		calculates simple moving average (SMA) and augments the stock dataframe with this SMA(n) data as a new column
+		calculates simple moving average (SMA) and augments the stock dataframe
+		with this SMA(n) data as a new column
 
 		Parameters
 		n : int
@@ -187,19 +195,21 @@ class StockData():
 		df = self.data.reset_index()
 
 		if col_head not in df.columns:
-			#Extract full dataframe from the actual data(to check if there is enough data for sma)
-			dateList = self.data.index.values.tolist() #List of data in self dataframe
+			# Extract full dataframe from the actual data
+			# (to check if there is enough data for sma)
+			dateList = self.data.index.values.tolist()
 			returnList = []
-			for date in dateList: #for date in dateList
-				dateIndex = df[df["Date"]==date].index.values[0] # find the index of date in the full data
+			for date in dateList: # for date in dateList
+			# find the index of date in the full data
+				dateIndex = df[df["Date"]==date].index.values[0]
 				if dateIndex < n: # if date index is less than n: append None
 					returnList.append(np.nan)
 				else:
 					sum = 0
 					for i in range(n):
-						sum += df.iloc[dateIndex-i]["Adj Close"]
-						# else sum of data from dateIndex to dateIndex-i(0,1,2...n)
-					returnList.append(sum/n)  #append the SMA for each day to a list
+						sum += df.iloc[dateIndex-i]["Close"]
+					# append the SMA for each day to a list
+					returnList.append(sum/n)
 
 			self.data[col_head] = returnList
 			print(self.data)
@@ -209,7 +219,8 @@ class StockData():
 
 	def calculate_crossover(self, SMAa, SMAb):
 		"""
-		calculates the crossover positions and values, augments the stock dataframe with 2 new columns
+		calculates the crossover positions and values,
+		augments the stock dataframe with 2 new columns
 		'Sell' and 'Buy' containing the value at which SMA crossover happens
 
 		Parameters
@@ -218,8 +229,8 @@ class StockData():
 		SMA2 : str
 			the second column head title containing the SMA values
 		col : str ('Close')
-			the column head title whose values will copied into 'Buy' and 'Sell' columns
-			to indicate crossovers had happen on that index
+			the column head title whose values will copied into 'Buy' and 'Sell'
+			columns to indicate crossovers had happen on that index
 
 		Returns
 		self : StockData
@@ -234,8 +245,10 @@ class StockData():
 		col_head4 = 'Sell'
 		df = self.data
 
-		SMAlist = self.data.index.values.tolist() # to ensure the correct number of elements in the loop
-		if SMAa < SMAb: # extracts the SMA from the specific column in self.data where SMA data will be
+		# to ensure the correct number of elements in the loop
+		SMAlist = self.data.index.values.tolist()
+		# extracts the SMA from the specific column in self.data
+		if SMAa < SMAb:
 			SMA1 = df[SMAa].tolist()
 			SMA2 = df[SMAb].tolist()
 		elif SMAa > SMAb:
@@ -249,26 +262,34 @@ class StockData():
 		buySignal = []  		# filtered out location of buy signals
 		sellSignal = []  		# filtered out location of sell signals
 
-		for i in range(len(SMAlist)):  # goes through every element in the SMA values
-			if SMA1[i] > SMA2[i]: stockPosition.append(1)  		# SMA1 above SMA2
-			elif SMA1[i] < SMA2[i]: stockPosition.append(0)  	# SMA2 above SMA1
-			elif SMA1[i] == SMA2[i]: stockPosition.append(stockPosition[i-1]) # if the SMAs are equal, repeat the previous entry because no crossover has occured yet
-			else: stockPosition.append(np.nan) #if no data, leave blank
+		# goes through every element
+		for i in range(len(SMAlist)):
+			if SMA1[i] > SMA2[i]: stockPosition.append(1)   # SMA1 above SMA2
+			elif SMA1[i] < SMA2[i]: stockPosition.append(0) # SMA2 above SMA1
+			# if the SMAs are equal, repeat the previous entry
+			# because no crossover has occured yet
+			elif SMA1[i] == SMA2[i]: stockPosition.append(stockPosition[i-1])
+			else: stockPosition.append(np.nan) # if no data, leave blank
 
-		for j in range(len(stockPosition)):  			# find the places where crossover occurs
-			if j == 0: stockSignal.append(np.nan) 	# 'shifts' the data one period to the right to ensure crossovers are reflected on the correct date
-			else: stockSignal.append(stockPosition[j] - stockPosition[j-1]) # calculation for the crossover signals
+		# find the places where crossover occurs
+		for j in range(len(stockPosition)):
+			# 'shifts' the data one period to the right
+			# to ensure crossovers are reflected on the correct date
+			if j == 0: stockSignal.append(np.nan)
+			# calculation for the crossover signals
+			else: stockSignal.append(stockPosition[j] - stockPosition[j-1])
+
 
 		for k in range(len(stockSignal)): # finding location of buy signals
 			if stockSignal[k] == 1:
-				value = (self.data[SMAa].tolist()[k] + self.data[SMAb].tolist()[k]) / 2
-				buySignal.append(value) # adds '1' at the location of buy signals in a separate column
+				value = self.data[SMAa].tolist()[k]
+				buySignal.append(value)
 			else: buySignal.append(np.nan) # if no signal leave blank
 
-		for k in range(len(stockSignal)): #finding location of sell signals
+		for k in range(len(stockSignal)): # finding location of sell signals
 			if stockSignal[k] == -1:
-				value = (self.data[SMAa].tolist()[k] + self.data[SMAb].tolist()[k]) / 2
-				sellSignal.append(value) # adds '-1' at the location of sell signals in a separate column
+				value = self.data[SMAa].tolist()[k]
+				sellSignal.append(value)
 			else: sellSignal.append(np.nan) # if no signal leave blank
 
 		self.data[col_head3] = buySignal

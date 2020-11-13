@@ -63,7 +63,7 @@ class Main(qtw.QWidget, Ui_Form):
 		self.setupUi(self)
 		self.setWindowTitle("Stock Chart & Moving Average Application")
 
-		# sets up a new figure to plot on, then instantiates a canvas and toolbar object
+		# sets up figure to plot on, instantiates canvas and toolbar
 		self.figure, self.ax = plt.subplots()
 		self.canvas = FigureCanvas(self.figure)
 		self.toolbar = NavigationToolbar(self.canvas, self)
@@ -89,12 +89,13 @@ class Main(qtw.QWidget, Ui_Form):
 
 	def load_data(self):
 		"""
-		loads stock data .csv from inputted filepath string on the GUI as StockData object,
-		also autocompletes all inputs using information provided by the csv.
+		loads stock data .csv from inputted filepath string on the GUI
+		as StockData object, also autocompletes all inputs
+		using information provided by the csv.
 
 		Error handling
 			invalid filepath :
-				empty filepath or file could not be found or opened.
+				empty filepath or file could not be found.
 			invalid .csv :
 				.csv file is empty, missing date column, etc.
 		"""
@@ -125,20 +126,24 @@ class Main(qtw.QWidget, Ui_Form):
 
 	def update_canvas(self):
 		"""
-		creates a datetime object from the inputted date string of format YYYY-MM-DD.
-		uses it to slice a copy of loaded stock_data to be used to update graphics.
-		checks checkboxes first to see if SMA1, SMA2, Buya and Sell plots need to be drawn.
-		finally, updates graphic accordingly
+		creates a datetime object from the inputted date string
+		of format YYYY-MM-DD. uses it to slice a copy of loaded
+		stock_data to be used to update graphics. checks
+		checkboxes first to see if SMA1, SMA2, Buy and Sell plots
+		need to be drawn. finally, updates graphic accordingly.
 
 		Error handling
 		invalid date format:
-			date format inside the .csv file is not of form YYYY-MM-DD
+			date format inside the .csv file is not YYYY-MM-DD
 		non-existent stock_data :
-			the selected range results in an empty dataframe or end date < start date
+			the selected range results in an empty dataframe
+			or end date < start date
 		non-existent data point :
-			data of that date does not exist, or maybe because it is Out-Of-Bound
+			data of that date does not exist,
+			or maybe because it is Out-Of-Bound
 		raised exceptions :
-			SMA1 and SMA2 values are the same, or other exceptions raised
+			SMA1 and SMA2 values are the same,
+			or other exceptions raised
 		"""
 		self.ax.clear()
 		self.date_format = '%Y-%m-%d'
@@ -188,14 +193,16 @@ class Main(qtw.QWidget, Ui_Form):
 
 	def plot_graph(self, column_headers, formats):
 		"""
-		plots graphs specified under columnd_headers using the formats specified
+		plots graphs specified under columnd_headers using the formats
 
 		Parameters
 		column_headers : [str, str, ...]
-			a list containing column header names whose data are to be plotted
+			a list containing column header names with data to be plotted
 		formats : [str, str, ...]
-			a list of matplotlib built-in style strings to indicate whether to plot line or scatterplot
-			and the colours corresponding to each value in col_headers (hence, must be same length)
+			a list of matplotlib built-in style strings to indicate
+			whether to plot line or scatterplot and the colours
+			corresponding to each value in col_headers
+			(hence, must be same length)
 
 		Error handling
 		empty dataframe :

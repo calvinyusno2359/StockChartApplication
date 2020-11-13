@@ -164,7 +164,7 @@ class Main(qtw.QWidget, Ui_Form):
 			if self.SMA2Checkbox.isChecked():
 				self.stock_data._calculate_SMA(int(self.SMA2Edit.text()))
 				column_headers.append(f"SMA{self.SMA2Edit.text()}")
-				formats.append('c-')
+				formats.append('m-')
 			if len(column_headers) == 3:
 				self.stock_data._calculate_crossover(column_headers[1], column_headers[2], column_headers[1])
 				column_headers.append('Sell')
@@ -217,11 +217,10 @@ class Main(qtw.QWidget, Ui_Form):
 		                              for dates in self.selected_stock_data.index.values]
 		                              ))
 
-		colors = ['black', 'blue', 'orange', 'red', 'green']
 		for i in range(len(column_headers)):
 			if column_headers[i] in self.selected_stock_data.columns:
 				y_data = list(self.selected_stock_data[column_headers[i]])
-				self.ax.plot(x_data, y_data, formats[i], label=column_headers[i], color=colors[i])
+				self.ax.plot(x_data, y_data, formats[i], label=column_headers[i])
 				self.report(f"{column_headers[i]} data is being plotted.")
 			else: self.report(f"{column_headers[i]} data does not exist.")
 

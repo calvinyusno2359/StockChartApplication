@@ -17,6 +17,16 @@ nbmerge main_window.ipynb app.ipynb appendix.ipynb > "Python Programming and Its
 4. Click `File > Download As > PDF via LaTeX` on the top left hand corner
 5. (Optional) if prompted to install a module, simply follow the instructions
 
+## Team & Project Information
+The project is public, all source code, ipython notebooks and the application itself are available for download at: https://github.com/heavensward-argentlux/StockChartApplication
+
+SMU QF205 G2 Team 3
+1. YUSNOVERI CALVIN
+2. YANG JIAXIN
+3. PANG BO HAO EDWIN
+4. LIM ZHI XIN CASPER
+5. LIM WEI YANG
+
 ## Table of Contents
 1. User Manual
     1. Overview
@@ -51,6 +61,9 @@ nbmerge main_window.ipynb app.ipynb appendix.ipynb > "Python Programming and Its
     4. Using `Path` from `pathlib` to parse `filepath`
     5. Preventing Crashes with `try... except...`
     6. Setting `Widget` Values Programmatically
-    x. Connecting `Widgets` to `Functions`
-    x.
+    7. Learning Point: parsing date `string` using `datetime`
+    8. checkbox.ischeked()
+    9. `matplotlib` plot format `strings`
+    x. Connecting `Widgets` to `functions`
+    x. Compiling Python Modules into an `.exe`
 

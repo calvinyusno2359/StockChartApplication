@@ -20,6 +20,7 @@ nbmerge main_window.ipynb app.ipynb > QF205_Report.ipynb
 ## Table of Contents
 1. User Manual
     1. Overview
+    2. direction (if basic 2, 3, else 4,5,6)
 2. Python Basics
     1.
 3. Python Packages
@@ -37,5 +38,13 @@ nbmerge main_window.ipynb app.ipynb > QF205_Report.ipynb
     4. Compiling `main_window.ui`into `main_window.py`
 6. app.py
 
-## Knowledge Points
-1. asdf
+## Learning Points
+1.
+2. `main_window.py`
+    1. `Qt Designer` + `PyQt5` Template
+    2. `Qt Designer` + `PyQt5 Widget` Types
+    3. `Qt Designer` + `PyQt5 Widget` Attributes
+3. `app.py`
+    1. Inheriting Widgets from `main_window.py`
+    2. Defining & Adding Widgets programmatically
+

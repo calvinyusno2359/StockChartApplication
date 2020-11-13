@@ -7,7 +7,7 @@ pip install nbmerge
 ```
 To merge documents use the following commands on the current `report` directory (not root):
 ```
-nbmerge main_window.ipynb app.ipynb > QF205_Report.ipynb
+nbmerge main_window.ipynb app.ipynb appendix.ipynb > "Python Programming and Its Applications in Stock Chart & Moving Average (MA) Crossover.ipynb"
 ```
 
 ## Converting IPython Notebook via LaTeX
@@ -39,7 +39,7 @@ nbmerge main_window.ipynb app.ipynb > QF205_Report.ipynb
 6. app.py
 
 ## Learning Points
-1.
+1. `stock_data.py`
 2. `main_window.py`
     1. `Qt Designer` + `PyQt5` Template
     2. `Qt Designer` + `PyQt5 Widget` Types
@@ -47,4 +47,7 @@ nbmerge main_window.ipynb app.ipynb > QF205_Report.ipynb
 3. `app.py`
     1. Inheriting Widgets from `main_window.py`
     2. Defining & Adding Widgets programmatically
+    3. Getting `Line Edit Widget` Value
+    4. Preventing Crashes with `try... except...`
+    5. Setting `Widget` Values Programmatically
 

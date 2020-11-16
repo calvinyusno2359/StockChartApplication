@@ -32,7 +32,23 @@ SMU QF205 G2 Team 3
     1. Overview
     2. direction (if basic 2, 3, else 4,5,6)
 2. Python Basics
-    1.
+    1. Variables
+    2. Data types
+    3. Type conversation
+    4. Concatenation and Operations
+    5. Assignment Statement
+    6. Comments
+    7. Indentation
+    8. Functions
+    9. Loops
+    10. If/Elif/Else
+    11. Tuple
+    12. F-Strings
+    13. Assert Statement
+    14. Exception
+    15. Lambda Function
+    16. Classes, Object and __ init __
+    17. Inheritance
 3. Python Packages
     1. Import Statements
     2. Pandas

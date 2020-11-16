@@ -7,7 +7,7 @@ pip install nbmerge
 ```
 To merge documents use the following commands on the current `report` directory (not root):
 ```
-nbmerge user-manual2.ipynb python-basics.ipynb main_window.ipynb app.ipynb appendix.ipynb > "Python Programming and Its Applications in Stock Chart & Moving Average (MA) Crossover.ipynb"
+nbmerge user-manual.ipynb python-basics.ipynb main_window.ipynb app.ipynb appendix.ipynb > "Python Programming and Its Applications in Stock Chart & Moving Average (MA) Crossover.ipynb"
 ```
 
 ## Converting IPython Notebook via LaTeX

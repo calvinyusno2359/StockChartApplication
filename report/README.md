@@ -61,9 +61,13 @@ SMU QF205 G2 Team 3
     4. Using `Path` from `pathlib` to parse `filepath`
     5. Preventing Crashes with `try... except...`
     6. Setting `Widget` Values Programmatically
-    7. Learning Point: parsing date `string` using `datetime`
-    8. checkbox.ischeked()
+    7. Parsing date `string` using `datetime`
+    8. Getting `Checkbox Widget` Value
     9. `matplotlib` plot format `strings`
-    x. Connecting `Widgets` to `functions`
-    x. Compiling Python Modules into an `.exe`
+    10. Clearing Axes
+    11. Preventing Crashes with assert
+    12. The "Standard Way" of Plotting Using matplotlib
+    13. Anatomy `matplotlib`'s `Figure`
+    14. Connecting `Widgets` to `functions`
+    15. Compiling Python Modules into an `.exe`
 

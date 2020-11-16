@@ -192,7 +192,7 @@ class Main(qtw.QWidget, Ui_Form):
 
 	def plot_graph(self, column_headers, formats):
 		"""
-		plots graphs specified under columnd_headers using the formats
+		plots graphs specified under column_headers using the formats
 
 		Parameters
 		column_headers : [str, str, ...]

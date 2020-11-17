@@ -29,8 +29,9 @@ SMU QF205 G2 Team 3
 
 ## Table of Contents
 1. User Manual
-    1. Overview
-    2. direction (if basic 2, 3, else 4,5,6)
+    1. Running the Application using .exe
+    2. Process flow
+    3. Running the Application using python shell
 2. Python Basics
     1. Variables
     2. Data types
@@ -55,6 +56,14 @@ SMU QF205 G2 Team 3
     3. Numpy
     4. Datetime
 4. stock_data.py
+    1. Import
+    2. Class
+    3. Constructor
+    4. Check data
+    5. Get data
+    6. Get period
+    7. calculate_SMA
+    8. calculate_crossover
 5. main_window.py
     1. Installing `Qt Designer`
     2. Building `main_window.ui` Using `Qt Designer`
@@ -66,6 +75,18 @@ SMU QF205 G2 Team 3
 
 ## Learning Points
 1. `stock_data.py`
+    1. `Package alias`
+    2. `Class usage`
+    3. `Default constructor`
+    4. `Indentation`
+    5. `Return statement`
+    6. `Returning multiple variables`
+    7. `Built-in functions`
+    8. `Logical operators`
+    9. `if, elif, else statements`
+    10. `Indexing`
+    11. `np.nan`
+    12. `testing`
 2. `main_window.py`
     1. `Qt Designer` + `PyQt5` Template
     2. `Qt Designer` + `PyQt5 Widget` Types

@@ -45,11 +45,12 @@ SMU QF205 G2 Team 3
     10. If/Elif/Else
     11. Tuple
     12. F-Strings
-    13. Assert Statement
-    14. Exception
-    15. Lambda Function
-    16. Classes, Object and __ init __
-    17. Inheritance
+    13. Try/Except
+    14. Assert Statement
+    15. Exception
+    16. Lambda Function
+    17. Classes, Object
+    18. Inheritance
 3. Python Packages
     1. Import Statements
     2. Pandas

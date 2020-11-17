@@ -29,7 +29,7 @@ SMU QF205 G2 Team 3
 
 ## Table of Contents
 1. User Manual
-    1. Running the Application using .exe
+    1. Running the Application using `.exe` (Windows Only)
     2. Process flow
     3. Running the Application using python shell
 2. Python Basics

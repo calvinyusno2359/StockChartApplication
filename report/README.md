@@ -31,7 +31,7 @@ SMU QF205 G2 Team 3
 1. User Manual
     1. Running the Application using `.exe` (Windows Only)
     2. Process flow
-    3. Running the Application using python shell
+    3. Running the Application using Python shell
 2. Python Basics
     1. Variables
     2. Data types

@@ -7,7 +7,7 @@ pip install nbmerge
 ```
 To merge documents use the following commands on the current `report` directory (not root):
 ```
-nbmerge user-manual.ipynb python-basics.ipynb stock_data.ipynb main_window.ipynb app.ipynb appendix.ipynb > "Python Programming and Its Applications in Stock Chart & Moving Average (MA) Crossover.ipynb"
+nbmerge user-manual.ipynb python-basics.ipynb python-packages2.ipynb stock_data.ipynb main_window.ipynb app.ipynb appendix.ipynb > "Python Programming and Its Applications in Stock Chart & Moving Average (MA) Crossover.ipynb"
 ```
 
 ## Converting IPython Notebook via LaTeX
@@ -30,8 +30,8 @@ SMU QF205 G2 Team 3
 ## Table of Contents
 1. User Manual
     1. Running the Application using `.exe` (Windows Only)
-    2. Process flow
-    3. Running the Application using Python shell
+    2. Running the Application using Python shell
+    3. Application Components
 2. Python Basics
     1. Variables
     2. Data types
@@ -69,7 +69,7 @@ SMU QF205 G2 Team 3
     1. Installing `Qt Designer`
     2. Building `main_window.ui` Using `Qt Designer`
         1. Defining the GUI
-        2. Defining the Widgets
+        2. Defining the Widgets inside the GUI
     3. Installing PyQt5
     4. Compiling `main_window.ui`into `main_window.py`
 6. app.py

@@ -73,21 +73,30 @@ SMU QF205 G2 Team 3
     3. Installing PyQt5
     4. Compiling `main_window.ui`into `main_window.py`
 6. app.py
+    1. Inheriting `Widgets` from `main_window.py`
+    2. Defining functions in `app.py`
+        1. `load_data(self)`
+        2. `update_canvas(self)`
+        3. `plot_graph(self, column_headers, formats)`
+        4. `report(self, string)`
+        5. `center(self)`
+    3. Connecting Widget actions to functions
+    4. (Optional) Compiling `app.exe`
 
 ## Learning Points
 1. `stock_data.py`
-    1. `Package alias`
-    2. `Class usage`
-    3. `Default constructor`
-    4. `Indentation`
-    5. `Return statement`
-    6. `Returning multiple variables`
-    7. `Built-in functions`
-    8. `Logical operators`
-    9. `if, elif, else statements`
-    10. `Indexing`
+    1. Package alias
+    2. Class usage
+    3. Default constructor
+    4. Indentation
+    5. `return` statement
+    6. Returning multiple variables
+    7. Built-in functions
+    8. Logical operators
+    9. `if, elif, else` statements
+    10. Indexing
     11. `np.nan`
-    12. `testing`
+    12. Testing
 2. `main_window.py`
     1. `Qt Designer` + `PyQt5` Template
     2. `Qt Designer` + `PyQt5 Widget` Types
@@ -108,4 +117,3 @@ SMU QF205 G2 Team 3
     13. Anatomy `matplotlib`'s `Figure`
     14. Connecting `Widgets` to `functions`
     15. Compiling Python Modules into an `.exe`
-

@@ -17,7 +17,7 @@ nbmerge user-manual.ipynb python-basics.ipynb python-packages2.ipynb stock_data.
 4. Click `File > Download As > PDF via LaTeX` on the top left hand corner
 5. (Optional) if prompted to install a module, simply follow the instructions
 
-# Python Programming and Its Applications in Stock Chart & Moving Average (MA) Crossover.ipynb
+# Python Programming and Its Applications in Stock Chart & Moving Average (MA) Crossover
 
 ## Team & Project Information
 The project is public, all source code, ipython notebooks and the application itself are available for download at: https://github.com/heavensward-argentlux/StockChartApplication
